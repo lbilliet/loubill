@@ -1,3 +1,4 @@
+rm(list=ls())
 chemRepTr<-getwd()
 chemRepTr
 resRchYaf<-grep("lb3", chemRepTr, ignore.case = T)
