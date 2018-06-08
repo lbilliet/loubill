@@ -79,3 +79,6 @@ cor(tailleG2,performanceG2)#pour utiliser fonction cor, il faut vecteur de valeu
 ###régression linéaire
 #via la fonction lm(x~y) pour linear model
 lm(performanceG2~tailleG2)
+
+###test corrélation
+cor.test(performanceG2,tailleG2)
