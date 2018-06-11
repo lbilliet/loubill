@@ -35,3 +35,16 @@ notes <-
 notes
 summary(notes)
 table(notes)
+str(notes)
+####### pas moyen de faire de l'arithmétique sur des facteurs par contre => les transformer en vecteurs au besoin
+vecNotes<-as.vector(notes)
+vecNotes
+summary(vecNotes)
+table(vecNotes)
+str(vecNotes)
+
+##### attention à ne pas vouloir convertir via as.numeric => exemple :
+notes
+notePbCvrs<-as.numeric(notes)
+notePbCvrs
+#ici en fait R stocke pour chaque élément du facteur un identifiant interne numérique invisible pour l'utilisateur, et c'est finalement ce qu'on convertit ici en vecteur de numériques
