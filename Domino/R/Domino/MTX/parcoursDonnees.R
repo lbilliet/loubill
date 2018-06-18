@@ -1,4 +1,4 @@
-setwd("C:/Users/lb3/OneDrive/not_sync/Rworkspace/MTX")
+setwd("C:/Users/lb3/OneDrive/sync/git/loubill/Domino/R/Domino/MTX")
 #install.packages("devtools")
 # devtools::install_github("lbilliet/loubill")
 # slam_url <- "https://cran.r-project.org/src/contrib/Archive/slam/slam_0.1-37.tar.gz"
