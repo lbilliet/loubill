@@ -1,0 +1,1 @@
+package.skeleton(name = "dominalgo", list, environment = .GlobalEnv, path = ".", force = FALSE, code_files = )
