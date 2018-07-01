@@ -1,0 +1,61 @@
+Rprof(NULL)
+# setwd("C:/Users/lb3/OneDrive/sync/git/loubill/Domino/R/Domino/MTX")
+setwd("F:/OneDrive/sync/git/loubill/Domino/R/Domino/MTX")
+# install.packages(c('tm', 'SnowballC', 'wordcloud', 'topicmodels', "koRpus", "mclustcomp", "devtools", "installr", "RNewsflow", "koRpus","wordVectors"))
+# installr::install.Rtools()
+# devtools::install_github("lbilliet/loubill")
+# slam_url <- "https://cran.r-project.org/src/contrib/Archive/slam/slam_0.1-37.tar.gz"
+# install_url(slam_url)
+# urlSlam <- "https://cran.r-project.org/bin/windows/contrib/3.6/slam_0.1-43.zip"
+# install_url(urlSlam)
+# install_github("bmschmidt/wordVectors")
+#devtools::install_github("bmschmidt/wordVectors")
+Rprof(append = TRUE, filename = "tps/Rprof.out")
+library('devtools')
+# library(tm)
+# library(SnowballC)
+# library(wordcloud)
+# library(topicmodels)
+library("koRpus")
+# library("wordVectors")
+library("RNewsflow")
+library("mclustcomp")
+
+######import données
+df.mtx<-read.csv2("data/mtx.csv", sep = "\n" ,header=F, quote = "", stringsAsFactors = F, fileEncoding = "UTF8")
+df.alt<-read.csv2("data/alt.csv", sep = "\n" ,header=F, quote = "", stringsAsFactors = F, fileEncoding = "UTF8")
+
+#constitution corpus
+corpus.mtx = Corpus(VectorSource(df.mtx))
+corpus.alt = Corpus(VectorSource(df.alt))
+
+#######consitution matrice documents
+#matrice frequence termes
+tdm.mtx <- TermDocumentMatrix(corpus.mtx)
+tdm.alt <- TermDocumentMatrix(corpus.alt)
+#matrice frequence documents
+dtm.mtx <- DocumentTermMatrix(corpus.mtx, control = list(weighting = weightTfIdf, stopwords = TRUE))
+dtm.alt <- DocumentTermMatrix(corpus.alt, control = list(weighting = weightTfIdf, stopwords = TRUE))
+#démo rch termes retrouvés à une fréq de 2
+freq.tdm.mtx<-findFreqTerms(tdm.mtx,lowfreq = 5, highfreq = Inf)
+freq.tdm.alt<-findFreqTerms(tdm.alt,lowfreq = 5, highfreq = Inf)
+
+################################
+#boucle constitution vecteur concaténation corpus mtx
+txt.mtx<-NULL
+for (i in 1 : nrow(df.mtx)){
+  txt.mtx<-paste0(df.mtx[i,])
+}
+
+vec.mtx<-unlist(strsplit(txt.mtx, split = " "))
+vec.mtx<-gsub(" ","",vec.mtx)
+# vec.mtx[vec.mtx != ""]
+#mettre vecteurs même longueur
+vec.mtx<-c(vec.mtx, rep(NA, length(vec.mtx)-length(vec.mtx)))
+write.table(vec.mtx, file = "data/stemVecAlt.txt", sep = "\t", row.names = F, quote = F)
+write.table(vec.mtx, file = "data/stemVecMtx.txt", sep = "\t", row.names = F, quote = F)
+
+#comparaison via mclustcomp
+mclustcomp(vec.mtx,vec.mtx, types = "all")#pb ici il faut une boucle pour parcourir chaque vecteur de la df
+Rprof(NULL)
+summaryRprof(filename = "tps/Rprof.out")

@@ -1,5 +1,6 @@
 ######préparation packages, wd, etc
-setwd("C:/Users/lb3/OneDrive/sync/git/loubill/Domino/R/Domino/MTX")
+# setwd("C:/Users/lb3/OneDrive/sync/git/loubill/Domino/R/Domino/MTX")
+setwd("F:/OneDrive/sync/git/loubill/Domino/R/Domino/MTX")
 install.packages(c('tm', 'SnowballC', 'wordcloud', 'topicmodels', "koRpus", "mclustcomp", "devtools", "installr", "RNewsflow", "koRpus","wordVectors"))
 # installr::install.Rtools()
 # devtools::install_github("lbilliet/loubill")
