@@ -1,0 +1,11 @@
+sample.interval=20000
+".Call" "tdm" "TermDocumentMatrix.SimpleCorpus" "TermDocumentMatrix" "t" "DocumentTermMatrix" 
+"print.default" "print" "print.data.frame" "<Anonymous>" 
+"print.default" "print" "print.data.frame" "<Anonymous>" 
+sample.interval=20000
+"file" "read.table" "read.csv2" 
+".Call" "tdm" "TermDocumentMatrix.SimpleCorpus" "TermDocumentMatrix" 
+"dimnames<-.simple_triplet_matrix" "dimnames<-" "dimnames<-" ".TermDocumentMatrix" "TermDocumentMatrix.SimpleCorpus" "TermDocumentMatrix" 
+"dimnames<-.simple_triplet_matrix" "dimnames<-" "dimnames<-" ".TermDocumentMatrix" "TermDocumentMatrix.SimpleCorpus" "TermDocumentMatrix" 
+".External2" "write.table" 
+"print.default" "print" "print.data.frame" "<Anonymous>" 
