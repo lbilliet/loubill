@@ -1,6 +1,4 @@
 x
-<<<<<<< HEAD
-=======
 "Bonjour
 ,
 y
@@ -11,7 +9,7 @@ changement
 oui
 sur
 le
-méthotrexate
+mÃ©thotrexate
 j
 en
 prends
@@ -34,11 +32,11 @@ peux
 attaquer
 les
 essais
-même
+mÃªme
 1
 semaine
-après
-l'arrêt
+aprÃ¨s
+l'arrÃªt
 du
 traitement.
 humira
@@ -52,7 +50,7 @@ il
 faut
 aussi
 l
-arrêter
+arrÃªter
 .
 je
 sais
@@ -81,4 +79,3 @@ une
 polyarthrite
 depuis
 86."
->>>>>>> 981ba97a97b9d900f7c92c5f06e5febac2787fa2
