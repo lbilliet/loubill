@@ -20,7 +20,6 @@ installr::install.Rtools()
 install.packages("RNewsflow")
 library("RNewsflow")
 install.packages("wordVectors")
-
 install_github("bmschmidt/wordVectors")
 devtools::install_github("bmschmidt/wordVectors")
 library("wordVectors")
@@ -29,7 +28,6 @@ library("mclustcomp")
 install.packages("quanteda")
 devtools::install_github("quanteda/quanteda.corpora")
 devtools::install_github("kbenoit/quanteda.dictionaries")
+devtools::install_github("quanteda/spacyr")
+devtools::install_github("quanteda/readtext")
 library(quanteda)
-
-
-
