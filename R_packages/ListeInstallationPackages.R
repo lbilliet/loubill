@@ -1,0 +1,35 @@
+install.packages("devtools")
+library(devtools)
+slam_url <- "https://cran.r-project.org/src/contrib/Archive/slam/slam_0.1-37.tar.gz"
+install_url(slam_url)
+urlSlam <- "https://cran.r-project.org/bin/windows/contrib/3.6/slam_0.1-43.zip"
+install_url(urlSlam)
+install.packages("tm")
+library(tm)
+install.packages("Snowballc")
+library(SnowballC)
+install.packages("wordcloud")
+library(wordcloud)
+install.packages("topicmodels")
+library(topicmodels)
+install.packages("koRpus")
+library("koRpus")
+install.packages("mclustcomp")
+install.packages("installr")
+installr::install.Rtools()
+install.packages("RNewsflow")
+library("RNewsflow")
+install.packages("wordVectors")
+
+install_github("bmschmidt/wordVectors")
+devtools::install_github("bmschmidt/wordVectors")
+library("wordVectors")
+install.packages("mclustcomp")
+library("mclustcomp")
+install.packages("quanteda")
+devtools::install_github("quanteda/quanteda.corpora")
+devtools::install_github("kbenoit/quanteda.dictionaries")
+library(quanteda)
+
+
+
