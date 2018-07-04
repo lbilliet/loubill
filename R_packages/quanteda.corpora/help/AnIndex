@@ -1,0 +1,9 @@
+quanteda.corpora-package	quanteda.corpora-package
+data_corpus_amicus	data_corpus_amicus
+data_corpus_immigrationnews	data_corpus_immigrationnews
+data_corpus_irishbudgets	data_corpus_irishbudgets
+data_corpus_movies	data_corpus_movies
+data_corpus_sotu	data_corpus_sotu
+data_corpus_ukmanifestos	data_corpus_ukmanifestos
+download	download
+quanteda.corpora	quanteda.corpora-package

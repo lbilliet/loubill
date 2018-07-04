@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Analyze text in a LIWC-alike fashion</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for liwcalike {quanteda.dictionaries}"><tr><td>liwcalike {quanteda.dictionaries}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Analyze text in a LIWC-alike fashion</h2>
+
+<h3>Description</h3>
+
+<p>Analyze a set of texts to produce a dataset of percentages and other
+quantities describing the text, similar to the functionality supplied by the
+Linguistic Inquiry and Word Count standalone software distributed at
+<a href="http://liwc.wpengine.com">http://liwc.wpengine.com</a>.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+liwcalike(x, ...)
+
+## S3 method for class 'corpus'
+liwcalike(x, ...)
+
+## S3 method for class 'character'
+liwcalike(x, dictionary = NULL, tolower = TRUE,
+  verbose = TRUE, digits = 2, ...)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>x</code></td>
+<td>
+<p>input object, a <span class="pkg">quanteda</span> <a href="../../quanteda/html/corpus.html">corpus</a> or character
+vector for analysis</p>
+</td></tr>
+<tr valign="top"><td><code>...</code></td>
+<td>
+<p>options passed to <code><a href="../../quanteda/html/tokens.html">tokens</a></code> offering
+finer-grained control over how &quot;words&quot; are defined</p>
+</td></tr>
+<tr valign="top"><td><code>dictionary</code></td>
+<td>
+<p>a <span class="pkg">quanteda</span> <a href="../../quanteda/html/dictionary.html">dictionary</a> object
+supplied for analysis</p>
+</td></tr>
+<tr valign="top"><td><code>tolower</code></td>
+<td>
+<p>convert to common (lowser) case before tokenizing</p>
+</td></tr>
+<tr valign="top"><td><code>verbose</code></td>
+<td>
+<p>if <code>TRUE</code> print status messages during processing</p>
+</td></tr>
+<tr valign="top"><td><code>digits</code></td>
+<td>
+<p>how many significant digits to print for percentage quantities</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>a data.frame object containing the analytic results, one row per
+document supplied
+</p>
+
+
+<h3>Segmentation</h3>
+
+<p>The LIWC standalone software has many options for
+segmenting the text.  While this function does not supply segmentation
+options, you can easily achieve the same effect by converting the input
+object into a corpus (if it is not already a corpus) and using
+<code><a href="../../quanteda/html/corpus_reshape.html">corpus_reshape</a></code> or <code><a href="../../quanteda/html/corpus_segment.html">corpus_segment</a></code>
+to split the input texts into smaller units based on user-supplied tags,
+sentence, or paragraph boundaries.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+liwcalike(data_char_testphrases)
+
+# examples for comparison
+txt &lt;- c("The red-shirted lawyer gave her yellow-haired, red nose ex-boyfriend $300
+            out of pity:(.")
+myDict &lt;- quanteda::dictionary(list(people = c("lawyer", "boyfriend"),
+                          colorFixed = "red",
+                          colorGlob = c("red*", "yellow*", "green*"),
+                          mwe = "out of"))
+liwcalike(txt, myDict, what = "word")
+liwcalike(txt, myDict, what = "fasterword")
+(toks &lt;- quanteda::tokens(txt, what = "fasterword", removeHyphens = TRUE))
+length(toks[[1]])
+# LIWC says 12 words
+
+## Not run: # works with LIWC 2015 dictionary too
+liwc2015dict &lt;- dictionary(file = "~/Dropbox/QUANTESS/dictionaries/LIWC/LIWC2015_English_Flat.dic",
+                           format = "LIWC")
+inaugLIWCanalysis &lt;- liwcalike(data_corpus_inaugural, liwc2015dict)
+inaugLIWCanalysis[1:6, 1:10]
+##           docname Segment   WC      WPS Sixltr   Dic function article relativ motion
+## 1 1789-Washington       1 1540 62.21739  24.35 253.1   52.403  9.0909 101.361 0.3483
+## 2 1793-Washington       2  147 33.75000  25.17 250.3    5.065  0.9091  10.884 0.0387
+## 3      1797-Adams       3 2584 62.72973  24.61 237.5   82.403 15.0649 163.946 0.3096
+## 4  1801-Jefferson       4 1935 42.19512  20.36 253.2   62.143 10.0000 105.442 0.7353
+## 5  1805-Jefferson       5 2381 48.13333  22.97 255.8   79.221 10.9091 151.701 0.6966
+## 6    1809-Madison       6 1267 56.04762  24.78 258.2   42.987  8.3117  83.673 0.3870
+
+## End(Not run)
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>quanteda.dictionaries</em> version 0.2 <a href="00Index.html">Index</a>]</div>
+</body></html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Install a language model in a conda or virtual environment</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for spacy_download_langmodel {spacyr}"><tr><td>spacy_download_langmodel {spacyr}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Install a language model in a conda or virtual environment</h2>
+
+<h3>Description</h3>
+
+<p>Installs one or more language models in a conda or virtualenv Python virtual
+environment as installed by <code><a href="spacy_install.html">spacy_install</a></code>.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+spacy_download_langmodel(model = "en", envname = "spacy_condaenv",
+  conda = "auto")
+
+spacy_download_langmodel_virtualenv(model = "en",
+  envname = "spacy_virtualenv", virtualenv_root = NULL)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>model</code></td>
+<td>
+<p>name of the language model to be installed.  A list of available
+language models and their names is available from the
+<a href="https://spacy.io/usage/models">spaCy language models</a> page.</p>
+</td></tr>
+<tr valign="top"><td><code>envname</code></td>
+<td>
+<p>name of the virtual environment</p>
+</td></tr>
+<tr valign="top"><td><code>conda</code></td>
+<td>
+<p>Path to conda executable.  Default <code>"auto"</code> which
+automatically finds the path.</p>
+</td></tr>
+<tr valign="top"><td><code>virtualenv_root</code></td>
+<td>
+<p>path to the virtualenv environment to install spaCy
+language model. If <code>NULL</code>, the default path <code>"~/.virtualenvs"</code>
+will be used.</p>
+</td></tr>
+</table>
+
+<hr /><div style="text-align: center;">[Package <em>spacyr</em> version 0.9.91 <a href="00Index.html">Index</a>]</div>
+</body></html>

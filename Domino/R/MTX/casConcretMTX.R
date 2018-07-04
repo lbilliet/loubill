@@ -1,15 +1,8 @@
 ######préparation packages, wd, etc
-# setwd("C:/Users/lb3/OneDrive/sync/git/loubill/Domino/R/Domino/MTX")
-setwd("F:/OneDrive/sync/git/loubill/Domino/R/Domino/MTX")
-install.packages(c('tm', 'SnowballC', 'wordcloud', 'topicmodels', "koRpus", "mclustcomp", "devtools", "installr", "RNewsflow", "koRpus","wordVectors"))
-# installr::install.Rtools()
-# devtools::install_github("lbilliet/loubill")
-# slam_url <- "https://cran.r-project.org/src/contrib/Archive/slam/slam_0.1-37.tar.gz"
-# install_url(slam_url)
-# urlSlam <- "https://cran.r-project.org/bin/windows/contrib/3.6/slam_0.1-43.zip"
-# install_url(urlSlam)
-# install_github("bmschmidt/wordVectors")
-#devtools::install_github("bmschmidt/wordVectors")
+setwd("C:/Users/lb3_local/OneDrive/sync/git/loubill/Domino/R/MTX")
+# setwd("F:/OneDrive/sync/git/loubill/Domino/R/MTX")
+# setwd("/media/louis/EXCHWINLIN/Gdrive/sync/git/loubill/Domino/R/MTX")
+
 library('devtools')
 library(tm)
 library(SnowballC)

@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: detect the encoding of texts</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for encoding {readtext}"><tr><td>encoding {readtext}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>detect the encoding of texts</h2>
+
+<h3>Description</h3>
+
+<p>Detect the encoding of texts in a character <a href="readtext.html">readtext</a> object and report
+on the most likely encoding for each document.  Useful in detecting the
+encoding of input texts, so that a source encoding can be (re)specified when
+inputting a set of texts using <code><a href="readtext.html">readtext</a></code>, prior to constructing
+a corpus.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+encoding(x, verbose = TRUE, ...)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>x</code></td>
+<td>
+<p>character vector, corpus, or readtext object whose texts' encodings
+will be detected.</p>
+</td></tr>
+<tr valign="top"><td><code>verbose</code></td>
+<td>
+<p>if <code>FALSE</code>, do not print diagnostic report</p>
+</td></tr>
+<tr valign="top"><td><code>...</code></td>
+<td>
+<p>additional arguments passed to <a href="../../stringi/html/stri_enc_detect.html">stri_enc_detect</a></p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+<p>Based on <a href="../../stringi/html/stri_enc_detect.html">stri_enc_detect</a>, which is in turn based on the ICU
+libraries.  See the ICU User Guide, 
+<a href="http://userguide.icu-project.org/conversion/detection">http://userguide.icu-project.org/conversion/detection</a>.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+encoding(data_char_encodedtexts)
+# show detected value for each text, versus known encoding
+data.frame(labelled = names(data_char_encodedtexts), 
+           detected = encoding(data_char_encodedtexts)$all)
+
+## Not run: # Russian text, Windows-1251
+myreadtext &lt;- readtext("http://www.kenbenoit.net/files/01_er_5.txt")
+encoding(myreadtext)
+
+## End(Not run)
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>readtext</em> version 0.71 <a href="00Index.html">Index</a>]</div>
+</body></html>

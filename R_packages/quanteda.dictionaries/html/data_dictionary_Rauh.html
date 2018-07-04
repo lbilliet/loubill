@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Rauh's German Political Sentiment Dictionary</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for data_dictionary_Rauh {quanteda.dictionaries}"><tr><td>data_dictionary_Rauh {quanteda.dictionaries}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Rauh's German Political Sentiment Dictionary</h2>
+
+<h3>Description</h3>
+
+<p>A <span class="pkg">quanteda</span> <a href="../../quanteda/html/dictionary.html">dictionary</a> object containing the
+dictionaries provided in Rauh (forthcoming). Rauh assesses its performance
+against human intuition of sentiment in German political language
+(parliamentary speeches, party manifestos, and media coverage). The resource
+builds on, harmonizes and extends the SentiWS (Remus et al. 2010) and
+GermanPolarityClues (Waltinger 2010) dictionaries. In order to use the
+negation correction provided by the dictionary, currently a combination of
+<a href="../../quanteda/html/tokens_replace.html">tokens_replace</a> and <a href="../../quanteda/html/tokens_compound.html">tokens_compound</a> is
+required to harmonize the five covered bi-gram patterns prior to scoring. The
+example below shows how to conduct this transformation. Note that the process
+changes the terms &quot;nicht|nichts|kein|keine|keinen&quot; to a joint term altering
+some of the features of the original corpus.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+data_dictionary_Rauh
+</pre>
+
+
+<h3>Format</h3>
+
+<p>The dictionary has four keys.
+</p>
+
+<dl>
+<dt><code>negative</code></dt><dd><p>19,750 terms indicating negative sentiment</p>
+</dd>
+<dt><code>positive</code></dt><dd><p>17,330 terms indicating positive sentiment</p>
+</dd>
+<dt><code>neg_positive</code></dt><dd><p>17,330 terms indicating a positive word preceded
+by a negation (used to convey negative sentiment)</p>
+</dd>
+<dt><code>neg_negative</code></dt><dd><p>19,750 terms indicating a negative word preceded
+by a negation (used to convey positive sentiment)</p>
+</dd>
+</dl>
+
+
+<h3>Source</h3>
+
+<p><a href="https://doi.org/10.7910/DVN/BKBXWD">https://doi.org/10.7910/DVN/BKBXWD</a>
+</p>
+
+
+<h3>References</h3>
+
+<p>Rauh, C. (Forthcoming). &quot;Validating a Sentiment Dictionary for German
+Political Language: A Workbench Note.&quot; <em>Journal of Information
+Technology &amp; Politics</em>.
+</p>
+<p>Remus, R., Quasthoff U., and Heyer, G. (2010).
+&quot;<a href="http://www.lrec-conf.org/proceedings/lrec2010/pdf/490_Paper.pdf">SentiWS
+- a Publicly Available German-language Resource for Sentiment Analysis.</a>&quot;
+In <em>Proceedings of the 7th International Language Ressources and
+Evaluation (LREC'10)</em>: 1168-1171.
+</p>
+<p>Waltinger, U. (2010)
+&quot;<a href="http://www.ulliwaltinger.de/pdf/91_Paper.pdf">GermanPolarityClues: A
+Lexical Resource for German Sentiment Analysis</a>.&quot; In <em>International
+Conference on Language Resources and Evaluation</em>, 17-23 May 2010 LREC'10.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+# tokenize example text
+toks &lt;- quanteda::tokens("nicht schlecht dieses wunderschöne Wörterbuch")
+# replace negation markers with "not"
+toks1 &lt;- quanteda::tokens_replace(toks, pattern = c("nicht", "nichts", "kein",
+                                                    "keine", "keinen"),
+                                  replacement = rep("not", 5))
+# compound bi-gram negation patterns
+toks2 &lt;- quanteda::tokens_compound(toks1, data_dictionary_Rauh, concatenator = " ")
+
+# apply dictionary
+quanteda::dfm(toks2, dictionary = data_dictionary_Rauh)
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>quanteda.dictionaries</em> version 0.2 <a href="00Index.html">Index</a>]</div>
+</body></html>

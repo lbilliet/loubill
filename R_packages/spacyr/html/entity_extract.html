@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Extract or consolidate entities from parsed documents</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for entity_extract {spacyr}"><tr><td>entity_extract {spacyr}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Extract or consolidate entities from parsed documents</h2>
+
+<h3>Description</h3>
+
+<p>From an object parsed by <code><a href="spacy_parse.html">spacy_parse</a></code>, extract the entities as a
+separate object, or convert the multi-word entities into single &quot;token&quot;
+consisting of the concatenated elements of the multi-word entities.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+entity_extract(x, type = c("named", "extended", "all"))
+
+entity_consolidate(x, concatenator = "_")
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>x</code></td>
+<td>
+<p>output from <code><a href="spacy_parse.html">spacy_parse</a></code>.</p>
+</td></tr>
+<tr valign="top"><td><code>type</code></td>
+<td>
+<p>type of named entities, either <code>named</code>, <code>extended</code>, or 
+<code>all</code>.  See 
+<a href="https://spacy.io/docs/usage/entity-recognition#entity-types">https://spacy.io/docs/usage/entity-recognition#entity-types</a> for 
+details.</p>
+</td></tr>
+<tr valign="top"><td><code>concatenator</code></td>
+<td>
+<p>the character used to concatenator elements of multi-word
+named entities</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p><code>entity_extract</code> returns a <code>data.frame</code> of all named
+entities, containing the following fields: 
+</p>
+
+<ul>
+<li><p><code>doc_id</code> name of the documument containing the entity 
+</p>
+</li>
+<li><p><code>sentence_id</code> the sentence ID containing the entity, within the document
+</p>
+</li>
+<li><p><code>entity</code> the named entity
+</p>
+</li>
+<li><p><code>entity_type</code> type of named entities (e.g. PERSON, ORG, PERCENT,
+etc.) 
+</p>
+</li></ul>
+
+<p><code>entity_consolidate</code> returns a modified <code>data.frame</code> of
+parsed results, where the named entities have been combined into a single
+&quot;token&quot;.  Currently, dependency parsing is removed when this consolidation
+occurs.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+
+spacy_initialize()
+
+# entity extraction
+txt &lt;- "Mr. Smith of moved to San Francisco in December."
+parsed &lt;- spacy_parse(txt, entity = TRUE)
+entity_extract(parsed)
+entity_extract(parsed, type = "all")
+
+
+# consolidating multi-word entities 
+txt &lt;- "The House of Representatives voted to suspend aid to South Dakota."
+parsed &lt;- spacy_parse(txt, entity = TRUE)
+entity_consolidate(parsed)
+
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>spacyr</em> version 0.9.91 <a href="00Index.html">Index</a>]</div>
+</body></html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: VectorSpaceModel subtraction</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for -,VectorSpaceModel,VectorSpaceModel-method {wordVectors}"><tr><td>-,VectorSpaceModel,VectorSpaceModel-method {wordVectors}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>VectorSpaceModel subtraction</h2>
+
+<h3>Description</h3>
+
+<p>Keep the VSM class when doing subtraction operations;
+make it possible to subtract a single row from an entire model.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+## S4 method for signature 'VectorSpaceModel,VectorSpaceModel'
+e1 - e2
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>e1</code></td>
+<td>
+<p>A vector space model</p>
+</td></tr>
+<tr valign="top"><td><code>e2</code></td>
+<td>
+<p>A vector space model of equal size OR a vector
+space model of a single row. If the latter (which is more likely)
+the specified row will be subtracted from each row.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>A VectorSpaceModel of the same dimensions and rownames
+as e1
+</p>
+<p>I believe this is necessary, but honestly am not sure.
+</p>
+
+<hr /><div style="text-align: center;">[Package <em>wordVectors</em> version 2.0 <a href="00Index.html">Index</a>]</div>
+</body></html>

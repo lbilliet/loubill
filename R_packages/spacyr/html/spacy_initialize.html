@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Initialize spaCy</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for spacy_initialize {spacyr}"><tr><td>spacy_initialize {spacyr}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Initialize spaCy</h2>
+
+<h3>Description</h3>
+
+<p>Initialize spaCy to call from R.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+spacy_initialize(model = "en", python_executable = NULL,
+  virtualenv = NULL, condaenv = NULL, ask = FALSE,
+  refresh_settings = FALSE, save_profile = FALSE, check_env = TRUE,
+  entity = TRUE)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>model</code></td>
+<td>
+<p>Language package for loading spaCy. Example: <code>en</code> (English) and
+<code>de</code> (German). Default is <code>en</code>.</p>
+</td></tr>
+<tr valign="top"><td><code>python_executable</code></td>
+<td>
+<p>the full path to the Python excutable, for which
+spaCy is installed</p>
+</td></tr>
+<tr valign="top"><td><code>virtualenv</code></td>
+<td>
+<p>set a path to the Python virtual environment with spaCy
+installed Example: <code>virtualenv = "~/myenv"</code></p>
+</td></tr>
+<tr valign="top"><td><code>condaenv</code></td>
+<td>
+<p>set a path to the anaconda virtual environment with spaCy
+installed Example: <code>condalenv = "myenv"</code></p>
+</td></tr>
+<tr valign="top"><td><code>ask</code></td>
+<td>
+<p>logical; if <code>FALSE</code>, use the first spaCy installation found;
+if <code>TRUE</code>, list available spaCy installations and prompt the user for
+which to use. If another (e.g. <code>python_executable</code>) is set, then this
+value will always be treated as <code>FALSE</code>.</p>
+</td></tr>
+<tr valign="top"><td><code>refresh_settings</code></td>
+<td>
+<p>logical; if <code>TRUE</code>, spacyr will ignore the seved
+settings in the profile and initiate a search of new settings.</p>
+</td></tr>
+<tr valign="top"><td><code>save_profile</code></td>
+<td>
+<p>logical; if <code>TRUE</code>, the current spaCy setting will
+be saved for the future use.</p>
+</td></tr>
+<tr valign="top"><td><code>check_env</code></td>
+<td>
+<p>logical; check whether conda/virtual environment generated
+by <code>spacyr_istall()</code> exists</p>
+</td></tr>
+<tr valign="top"><td><code>entity</code></td>
+<td>
+<p>logical; if <code>FALSE</code> is selected, named entity recognition
+is turned off in spaCy. This will speed up the parsing as it will exclude
+<code>ner</code> from the pipeline. For details of spaCy pipeline, see
+<a href="https://spacy.io/usage/processing-pipelines">https://spacy.io/usage/processing-pipelines</a>. The option <code>FALSE</code>
+is available only for spaCy version 2.0.0 or higher.</p>
+</td></tr>
+</table>
+
+
+<h3>Author(s)</h3>
+
+<p>Akitaka Matsuo
+</p>
+
+<hr /><div style="text-align: center;">[Package <em>spacyr</em> version 0.9.91 <a href="00Index.html">Index</a>]</div>
+</body></html>

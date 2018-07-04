@@ -1,0 +1,245 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: read a text file(s)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for readtext {readtext}"><tr><td>readtext {readtext}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>read a text file(s)</h2>
+
+<h3>Description</h3>
+
+<p>Read texts and (if any) associated document-level meta-data from one or more source files. 
+The text source files 
+come from the textual component of the files, and the document-level
+metadata (&quot;docvars&quot;) come from either the file contents or filenames.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+readtext(file, ignore_missing_files = FALSE, text_field = NULL,
+  docvarsfrom = c("metadata", "filenames", "filepaths"), dvsep = "_",
+  docvarnames = NULL, encoding = NULL, source = NULL, cache = TRUE,
+  verbosity = readtext_options("verbosity"), ...)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>file</code></td>
+<td>
+<p>the complete filename(s) to be read. This is designed to 
+automagically handle a number of common scenarios, so the value can be a
+&quot;glob&quot;-type wildcard value.  Currently available filetypes are: 
+</p>
+<p><strong>Single file formats:</strong>
+</p>
+
+<dl>
+<dt><code>txt</code></dt><dd><p>plain text files:
+So-called structured text files, which describe both texts and metadata:
+For all structured text filetypes, the column, field, or node 
+which contains the the text must be specified with the <code>text_field</code>
+parameter, and all other fields are treated as docvars.</p>
+</dd>
+<dt><code>json</code></dt><dd><p>data in some form of JavaScript 
+Object Notation, consisting of the texts and optionally additional docvars.
+The supported formats are:
+</p>
+
+<ul>
+<li><p> a single JSON object per file
+</p>
+</li>
+<li><p> line-delimited JSON, with one object per line
+</p>
+</li>
+<li><p> line-delimited JSON, of the format produced from a Twitter stream.
+This type of file has special handling which simplifies the Twitter format
+into docvars.  The correct format for each JSON file is automatically detected.</p>
+</li></ul>
+</dd>
+<dt><code>csv,tab,tsv</code></dt><dd><p>comma- or tab-separated values</p>
+</dd>
+<dt><code>html</code></dt><dd><p>HTML documents, including specialized formats from known
+sources, such as Nexis-formatted HTML.  See the <code>source</code> parameter
+below.</p>
+</dd>
+<dt><code>xml</code></dt><dd><p>Basic flat XML documents are supported &ndash; those of the 
+kind supported by <code><a href="../../XML/html/xmlToDataFrame.html">xmlToDataFrame</a></code>.  For xml files, an additional
+argument <code>collapse</code> may be passed through <code>...</code> that names the character(s) to use in 
+appending different text elements together.</p>
+</dd>
+<dt><code>pdf</code></dt><dd><p>pdf formatted files, converted through <span class="pkg">pdftools</span>.</p>
+</dd>  
+<dt><code>doc, docx</code></dt><dd><p>Microsoft Word formatted files.</p>
+</dd>
+</dl>
+<p><strong>Reading multiple files and file types:</strong> 
+</p>
+<p>In addition, <code>file</code> can also not be a path 
+to a single local file, but also combinations of any of the above types, such as:
+</p>
+<dl>
+<dt>a wildcard value</dt><dd><p>any valid 
+pathname with a wildcard (&quot;glob&quot;) expression that can be expanded by the 
+operating system.  This may consist of multiple file types.</p>
+</dd> 
+<dt>a URL to a remote</dt><dd><p>which is downloaded then loaded</p>
+</dd> 
+<dt><code>zip,tar,tar.gz,tar.bz</code></dt><dd><p>archive file, which is unzipped. The 
+contained files must be either at the top level or in a single directory.
+Archives, remote URLs and glob patterns can resolve to any of the other 
+filetypes, so you could have, for example, a remote URL to a zip file which
+contained Twitter JSON files.</p>
+</dd>
+</dl>
+</td></tr>
+<tr valign="top"><td><code>ignore_missing_files</code></td>
+<td>
+<p>if <code>FALSE</code>, then if the file
+argument doesn't resolve to an existing file, then an error will be thrown.
+Note that this can happen in a number of ways, including passing a path 
+to a file that does not exist, to an empty archive file, or to a glob 
+pattern that matches no files.</p>
+</td></tr>
+<tr valign="top"><td><code>text_field</code></td>
+<td>
+<p>a variable (column) name or column number indicating where 
+to find the texts that form the documents for the corpus.  This must be 
+specified for file types <code>.csv</code>, <code>.json</code>, and <code>.xls</code>/<code>.xlsx</code> 
+files.  For XML files, an XPath expression can be specified.</p>
+</td></tr>
+<tr valign="top"><td><code>docvarsfrom</code></td>
+<td>
+<p>used to specify that docvars should be taken from the 
+filenames, when the <code>readtext</code> inputs are filenames and the elements 
+of the filenames are document variables, separated by a delimiter 
+(<code>dvsep</code>).  This allows easy assignment of docvars from filenames such
+as <code>1789-Washington.txt</code>, <code>1793-Washington</code>, etc. by <code>dvsep</code>
+or from meta-data embedded in the text file header (<code>headers</code>).
+If <code>docvarsfrom</code> is set to <code>"filepaths"</code>, consider the full path to the
+file, not just the filename.</p>
+</td></tr>
+<tr valign="top"><td><code>dvsep</code></td>
+<td>
+<p>separator (a regular expression character string) used in 
+filenames to delimit docvar elements if  <code>docvarsfrom="filenames"</code> 
+or <code>docvarsfrom="filepaths"</code> is used</p>
+</td></tr>
+<tr valign="top"><td><code>docvarnames</code></td>
+<td>
+<p>character vector of variable names for <code>docvars</code>, if 
+<code>docvarsfrom</code> is specified.  If this argument is not used, default 
+docvar names will be used (<code>docvar1</code>, <code>docvar2</code>, ...).</p>
+</td></tr>
+<tr valign="top"><td><code>encoding</code></td>
+<td>
+<p>vector: either the encoding of all files, or one encoding
+for each files</p>
+</td></tr>
+<tr valign="top"><td><code>source</code></td>
+<td>
+<p>used to specify specific formats of some input file types, such
+as JSON or HTML. Currently supported types are <code>"twitter"</code> for JSON and
+<code>"nexis"</code> for HTML.</p>
+</td></tr>
+<tr valign="top"><td><code>cache</code></td>
+<td>
+<p>if <code>TRUE</code>, save remote file to a temporary folder. Only used
+when <code>file</code> is a URL.</p>
+</td></tr>
+<tr valign="top"><td><code>verbosity</code></td>
+<td>
+
+<ul>
+<li><p> 0: output errors only
+</p>
+</li>
+<li><p> 1: output errors and warnings (default)
+</p>
+</li>
+<li><p> 2: output a brief summary message
+</p>
+</li>
+<li><p> 3: output detailed file-related messages
+</p>
+</li></ul>
+</td></tr>
+<tr valign="top"><td><code>...</code></td>
+<td>
+<p>additional arguments passed through to low-level file reading 
+function, such as <code><a href="../../base/html/connections.html">file</a></code>, <code><a href="../../data.table/html/fread.html">fread</a></code>, etc.  Useful 
+for specifying an input encoding option, which is specified in the same was
+as it would be give to <code><a href="../../base/html/iconv.html">iconv</a></code>.  See the Encoding section of 
+<a href="../../base/html/connections.html">file</a> for details.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>a data.frame consisting of a columns <code>doc_id</code> and <code>text</code> 
+that contain a document identifier and the texts respectively, with any 
+additional columns consisting of document-level variables either found 
+in the file containing the texts, or created through the 
+<code>readtext</code> call.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+
+## get the data directory
+DATA_DIR &lt;- system.file("extdata/", package = "readtext")
+
+## read in some text data
+# all UDHR files
+(rt1 &lt;- readtext(paste0(DATA_DIR, "txt/UDHR/*")))
+
+# manifestos with docvars from filenames
+(rt2 &lt;- readtext(paste0(DATA_DIR, "txt/EU_manifestos/*.txt"),
+                 docvarsfrom = "filenames", 
+                 docvarnames = c("unit", "context", "year", "language", "party"),
+                 encoding = "LATIN1"))
+                 
+# recurse through subdirectories
+(rt3 &lt;- readtext(paste0(DATA_DIR, "txt/movie_reviews/*"), 
+                 docvarsfrom = "filepaths", docvarnames = "sentiment"))
+
+## read in csv data
+(rt4 &lt;- readtext(paste0(DATA_DIR, "csv/inaugCorpus.csv")))
+
+## read in tab-separated data
+(rt5 &lt;- readtext(paste0(DATA_DIR, "tsv/dailsample.tsv"), text_field = "speech"))
+
+## read in JSON data
+(rt6 &lt;- readtext(paste0(DATA_DIR, "json/inaugural_sample.json"), text_field = "texts"))
+
+## read in pdf data
+# UNHDR
+(rt7 &lt;- readtext(paste0(DATA_DIR, "pdf/UDHR/*.pdf"), 
+                 docvarsfrom = "filenames", 
+                 docvarnames = c("document", "language")))
+Encoding(rt7$text)
+
+## read in Word data (.doc)
+(rt8 &lt;- readtext(paste0(DATA_DIR, "word/*.doc")))
+Encoding(rt8$text)
+
+## read in Word data (.docx)
+(rt9 &lt;- readtext(paste0(DATA_DIR, "word/*.docx")))
+Encoding(rt9$text)
+
+## use elements of path and filename as docvars
+(rt10 &lt;- readtext(paste0(DATA_DIR, "pdf/UDHR/*.pdf"), 
+                  docvarsfrom = "filepaths", dvsep = "[/_.]"))
+
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>readtext</em> version 0.71 <a href="00Index.html">Index</a>]</div>
+</body></html>

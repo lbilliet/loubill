@@ -1,0 +1,21 @@
+check_type              Produce the table node
+create_inbody           Reshape in table header information into wide
+                        format
+eval_body               Evaluate and deparse the body argument
+eval_header             Evaluate and deparse the header argument
+get_body_xpath          Return body xpath
+get_cell_element        Extracts cells elements
+get_head_xpath          Return header xpath
+get_header_elements     Extracts header elements
+get_span                Extracts rowspan information
+get_trindex             Return trindex given an XPath
+htmltab                 Assemble a data frame from HTML table data
+identify_elements       Assemble XPath expressions for header and body
+normalize_tr            Normalizes rows to be nested in tr tags, header
+                        in thead, body in tbody and numbers them
+num_xpath               num_xpath: Generate numeric XPath expression
+rm_empty_cols           Remove columns which do not have data values
+rm_empty_rows           Remove rows which do not have data values
+rm_nuisance             Remove nuisance elements from the the table
+                        code
+select_tab              Selects the table from the HTML Code

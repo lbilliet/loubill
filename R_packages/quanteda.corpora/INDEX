@@ -1,0 +1,18 @@
+data_corpus_amicus      Amicus curiae briefs from Bakke (1978) and
+                        Bollinger (2008)
+data_corpus_immigrationnews
+                        UK news articles (2,833) from 2014 that mention
+                        immigration
+data_corpus_irishbudgets
+                        Annual budget speeches from the Irish Dail,
+                        2008-2012
+data_corpus_movies      Movie reviews from Pang, Lee, and Vaithyanathan
+                        (2002)
+data_corpus_sotu        U.S. State of the Union addresses from 1790 to
+                        2016
+data_corpus_ukmanifestos
+                        UK political party manifestos, 1945-2005
+download                Download an RDS file from online locations
+quanteda.corpora-package
+                        An R package containing texts and corpora for
+                        quanteda.

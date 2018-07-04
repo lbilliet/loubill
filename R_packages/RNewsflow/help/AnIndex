@@ -1,0 +1,14 @@
+delete.duplicates	delete.duplicates
+directed.network.plot	directed.network.plot
+docnet	docnet
+document.network	document.network
+document.network.plot	document.network.plot
+documents.compare	documents.compare
+dtm	dtm
+filter.window	filter.window
+meta	meta
+network.aggregate	network.aggregate
+newsflow.compare	newsflow.compare
+only.first.match	only.first.match
+show.window	show.window
+term.day.dist	term.day.dist

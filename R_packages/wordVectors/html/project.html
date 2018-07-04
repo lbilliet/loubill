@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Project each row of an input matrix along a vector.</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for project {wordVectors}"><tr><td>project {wordVectors}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Project each row of an input matrix along a vector.</h2>
+
+<h3>Description</h3>
+
+<p>As with 'cosineSimilarity
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+project(matrix, vector)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>matrix</code></td>
+<td>
+<p>A matrix or VectorSpaceModel</p>
+</td></tr>
+<tr valign="top"><td><code>vector</code></td>
+<td>
+<p>A vector (or object coercable to a vector)
+of the same length as the VectorSpaceModel.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>A new matrix or VectorSpaceModel of the same dimensions as 'matrix',
+each row of which is parallel to vector.
+</p>
+<p>If the input is a matrix, the output will be a matrix: if a VectorSpaceModel,
+it will be a VectorSpaceModel.
+</p>
+
+<hr /><div style="text-align: center;">[Package <em>wordVectors</em> version 2.0 <a href="00Index.html">Index</a>]</div>
+</body></html>

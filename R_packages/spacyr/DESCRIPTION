@@ -1,7 +1,7 @@
 Package: spacyr
 Type: Package
 Title: Wrapper to the 'spaCy' 'NLP' Library
-Version: 0.9.9
+Version: 0.9.91
 Authors@R: c( person("Kenneth", "Benoit", email = "kbenoit@lse.ac.uk", role =
     c("aut", "cre", "cph")), 
     person("Akitaka", "Matsuo", email = "A.Matsuo@lse.ac.uk", role = "aut") )
@@ -11,16 +11,22 @@ License: GPL-3
 LazyData: TRUE
 Depends: R (>= 3.0.0), methods
 Imports: data.table, reticulate (>= 1.6)
-Suggests: rmarkdown, testthat, knitr
+Suggests: rmarkdown, testthat, knitr, quanteda
 URL: http://github.com/quanteda/spacyr
 Encoding: UTF-8
 BugReports: https://github.com/quanteda/spacyr/issues
 RoxygenNote: 6.0.1
-NeedsCompilation: no
-Packaged: 2018-04-17 15:08:01 UTC; kbenoit
 Author: Kenneth Benoit [aut, cre, cph],
   Akitaka Matsuo [aut]
 Maintainer: Kenneth Benoit <kbenoit@lse.ac.uk>
-Repository: CRAN
-Date/Publication: 2018-04-17 15:48:20 UTC
-Built: R 3.5.1; ; 2018-07-02 17:09:34 UTC; windows
+Built: R 3.5.1; ; 2018-07-04 09:11:52 UTC; windows
+RemoteType: github
+RemoteHost: https://api.github.com
+RemoteRepo: spacyr
+RemoteUsername: quanteda
+RemoteRef: master
+RemoteSha: 2dc067cb64a2c7adef838ec9a6cb7b16c26d7871
+GithubRepo: spacyr
+GithubUsername: quanteda
+GithubRef: master
+GithubSHA1: 2dc067cb64a2c7adef838ec9a6cb7b16c26d7871

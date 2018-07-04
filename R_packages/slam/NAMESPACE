@@ -13,7 +13,6 @@ S3method("[<-", "simple_triplet_matrix")
 S3method("Math", "simple_triplet_matrix")
 S3method("Ops", "simple_triplet_matrix")
 S3method("Summary", "simple_triplet_matrix")
-S3method("aperm", "simple_triplet_matrix")
 S3method("as.matrix", "simple_triplet_matrix")
 S3method("as.simple_triplet_matrix", "simple_sparse_array")
 S3method("as.simple_triplet_matrix", "simple_triplet_matrix")
@@ -38,12 +37,28 @@ S3method("is.numeric", "simple_triplet_matrix")
 S3method("mean", "simple_triplet_matrix")
 S3method("print", "simple_triplet_matrix")
 S3method("rbind", "simple_triplet_matrix")
-S3method("split", "simple_triplet_matrix")
 S3method("t", "simple_triplet_matrix")
 S3method("unique", "simple_triplet_matrix")
 
 ## enhanced stuff
-useDynLib("slam", .registration = TRUE)
+useDynLib("slam",
+          "__valid_stm",
+          "__valid_ssa",
+          "__valid_v",
+          "_split_col",
+	  "_all_row",
+          "_part_index",
+          "_vector_index",
+          "_ini_array",
+          "_match_matrix",
+          "_unattr",
+          "_sums_stm",
+          "_row_tsums",
+          "_tcrossprod_stm_stm"    = "tcrossprod_stm_stm",
+          "_tcrossprod_stm_matrix" = "tcrossprod_stm_matrix",
+          "_col_apply_stm",
+          .fixes = "R"
+          )
 
 export("row_sums",
        "col_sums",
@@ -111,7 +126,6 @@ S3method("[", "simple_sparse_array")
 S3method("[<-", "simple_sparse_array")
 S3method("Math", "simple_sparse_array")
 S3method("Summary", "simple_sparse_array")
-S3method("aperm", "simple_sparse_array")
 S3method("as.array", "simple_sparse_array")
 S3method("as.array", "simple_triplet_matrix")
 S3method("as.simple_sparse_array", "simple_sparse_array")
@@ -127,6 +141,11 @@ S3method("dimnames<-", "simple_sparse_array")
 S3method("is.numeric", "simple_sparse_array")
 S3method("mean", "simple_sparse_array")
 S3method("print", "simple_sparse_array")
+
+if(getRversion() >= "2.13.0") {
+    S3method("aperm", "simple_triplet_matrix")
+    S3method("aperm", "simple_sparse_array")
+}
 
 ## Sparse matrix format readers and writers
 export("read_stm_CLUTO",
@@ -148,7 +167,4 @@ export("read_stm_CLUTO",
 ## S3method("fold",   "array")
 ## S3method("fold",   "simple_triplet_matrix")
 ## S3method("fold",   "simple_sparse_array")
-
-##
-export("slam_options")
 

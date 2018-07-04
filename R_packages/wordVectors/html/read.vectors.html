@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Read VectorSpaceModel</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for read.vectors {wordVectors}"><tr><td>read.vectors {wordVectors}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Read VectorSpaceModel</h2>
+
+<h3>Description</h3>
+
+<p>Read a VectorSpaceModel from a file exported from word2vec or a similar output format.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+read.vectors(filename, vectors = guess_n_cols(), binary = NULL, ...)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>filename</code></td>
+<td>
+<p>The file to read in.</p>
+</td></tr>
+<tr valign="top"><td><code>vectors</code></td>
+<td>
+<p>The number of dimensions word2vec calculated. Imputed automatically if not specified.</p>
+</td></tr>
+<tr valign="top"><td><code>binary</code></td>
+<td>
+<p>Read in the binary word2vec form. (Wraps 'read.binary.vectors') By default, function
+guesses based on file suffix.</p>
+</td></tr>
+<tr valign="top"><td><code>...</code></td>
+<td>
+<p>Further arguments passed to read.table or read.binary.vectors.
+Note that both accept 'nrows' as an argument. Word2vec produces
+by default frequency sorted output. Therefore 'read.vectors(&quot;file.bin&quot;, nrows=500)', for example,
+will return the vectors for the top 500 words. This can be useful on machines with limited
+memory.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>An matrixlike object of class 'VectorSpaceModel'
+</p>
+
+<hr /><div style="text-align: center;">[Package <em>wordVectors</em> version 2.0 <a href="00Index.html">Index</a>]</div>
+</body></html>

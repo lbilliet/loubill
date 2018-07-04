@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Prepare documents for word2Vec</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for prep_word2vec {wordVectors}"><tr><td>prep_word2vec {wordVectors}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Prepare documents for word2Vec</h2>
+
+<h3>Description</h3>
+
+<p>This function exports a directory or document to a single file
+suitable to Word2Vec run on. That means a single, seekable txt file
+with tokens separated by spaces. (For example, punctuation is removed
+rather than attached to the end of words.)
+This function is extraordinarily inefficient: in most real-world cases, you'll be
+much better off preparing the documents using python, perl, awk, or any other
+scripting language that can reasonable read things in line-by-line.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+prep_word2vec(origin, destination, lowercase = F, bundle_ngrams = 1, ...)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>origin</code></td>
+<td>
+<p>A text file or a directory of text files
+to be used in training the model</p>
+</td></tr>
+<tr valign="top"><td><code>destination</code></td>
+<td>
+<p>The location for output text.</p>
+</td></tr>
+<tr valign="top"><td><code>lowercase</code></td>
+<td>
+<p>Logical. Should uppercase characters be converted to lower?</p>
+</td></tr>
+<tr valign="top"><td><code>bundle_ngrams</code></td>
+<td>
+<p>Integer. Statistically significant phrases of up to this many words
+will be joined with underscores: e.g., &quot;United States&quot; will usually be changed to &quot;United_States&quot;
+if it appears frequently in the corpus. This calls word2phrase once if bundle_ngrams is 2,
+twice if bundle_ngrams is 3, and so forth; see that function for more details.</p>
+</td></tr>
+<tr valign="top"><td><code>...</code></td>
+<td>
+<p>Further arguments passed to word2phrase when bundle_ngrams is
+greater than 1.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>The file name (silently).
+</p>
+
+<hr /><div style="text-align: center;">[Package <em>wordVectors</em> version 2.0 <a href="00Index.html">Index</a>]</div>
+</body></html>

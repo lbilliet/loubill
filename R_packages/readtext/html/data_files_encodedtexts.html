@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: a .zip file of texts containing a variety of differently...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for data_files_encodedtexts {readtext}"><tr><td>data_files_encodedtexts {readtext}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>a .zip file of texts containing a variety of differently encoded texts</h2>
+
+<h3>Description</h3>
+
+<p>A set of translations of the Universal Declaration of Human
+Rights, plus one or two other miscellaneous texts, for testing the text
+input functions that need to translate different input encodings.
+</p>
+
+
+<h3>Source</h3>
+
+<p>The Universal Declaration of Human Rights resources, 
+<a href="http://www.ohchr.org/EN/UDHR/Pages/SearchByLang.aspx">http://www.ohchr.org/EN/UDHR/Pages/SearchByLang.aspx</a>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+## Not run: # unzip the files to a temporary directory
+FILEDIR &lt;- tempdir()
+unzip(system.file("extdata", "data_files_encodedtexts.zip", package = "readtext"), 
+      exdir = FILEDIR)
+
+# get encoding from filename
+filenames &lt;- list.files(FILEDIR, "\\.txt$")
+# strip the extension
+filenames &lt;- gsub(".txt$", "", filenames)
+parts &lt;- strsplit(filenames, "_")
+fileencodings &lt;- sapply(parts, "[", 3)
+fileencodings
+
+# find out which conversions are unavailable (through iconv())
+cat("Encoding conversions not available for this platform:")
+notAvailableIndex &lt;- which(!(fileencodings %in% iconvlist()))
+fileencodings[notAvailableIndex]
+
+# try readtext
+require(quanteda)
+txts &lt;- readtext(paste0(FILEDIR, "/", "*.txt"))
+substring(texts(txts)[1], 1, 80) # gibberish
+substring(texts(txts)[4], 1, 80) # hex
+substring(texts(txts)[40], 1, 80) # hex
+
+# read them in again
+txts &lt;- readtext(paste0(FILEDIR,  "/", "*.txt"), encoding = fileencodings)
+substring(texts(txts)[1], 1, 80)  # English
+substring(texts(txts)[4], 1, 80)  # Arabic, looking good 
+substring(texts(txts)[40], 1, 80) # Cyrillic, looking good
+substring(texts(txts)[7], 1, 80)  # Chinese, looking good
+substring(texts(txts)[26], 1, 80) # Hindi, looking good
+
+txts &lt;- readtext(paste0(FILEDIR, "/", "*.txt"), encoding = fileencodings,
+                  docvarsfrom = "filenames", 
+                  docvarnames = c("document", "language", "inputEncoding"))
+encodingCorpus &lt;- corpus(txts, source = "Created by encoding-tests.R") 
+summary(encodingCorpus)
+
+## End(Not run)
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>readtext</em> version 0.71 <a href="00Index.html">Index</a>]</div>
+</body></html>

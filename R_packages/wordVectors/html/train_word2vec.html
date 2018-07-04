@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Train a model by word2vec.</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for train_word2vec {wordVectors}"><tr><td>train_word2vec {wordVectors}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Train a model by word2vec.</h2>
+
+<h3>Description</h3>
+
+<p>Train a model by word2vec.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+train_word2vec(train_file, output_file = "vectors.bin", vectors = 100,
+  threads = 1, window = 12, classes = 0, cbow = 0, min_count = 5,
+  iter = 5, force = F, negative_samples = 5)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>train_file</code></td>
+<td>
+<p>Path of a single .txt file for training. Tokens are split on spaces.</p>
+</td></tr>
+<tr valign="top"><td><code>output_file</code></td>
+<td>
+<p>Path of the output file.</p>
+</td></tr>
+<tr valign="top"><td><code>vectors</code></td>
+<td>
+<p>The number of vectors to output. Defaults to 100.
+More vectors usually means more precision, but also more random error, higher memory usage, and slower operations.
+Sensible choices are probably in the range 100-500.</p>
+</td></tr>
+<tr valign="top"><td><code>threads</code></td>
+<td>
+<p>Number of threads to run training process on.
+Defaults to 1; up to the number of (virtual) cores on your machine may speed things up.</p>
+</td></tr>
+<tr valign="top"><td><code>window</code></td>
+<td>
+<p>The size of the window (in words) to use in training.</p>
+</td></tr>
+<tr valign="top"><td><code>classes</code></td>
+<td>
+<p>Number of classes for k-means clustering. Not documented/tested.</p>
+</td></tr>
+<tr valign="top"><td><code>cbow</code></td>
+<td>
+<p>If 1, use a continuous-bag-of-words model instead of skip-grams.
+Defaults to false (recommended for newcomers).</p>
+</td></tr>
+<tr valign="top"><td><code>min_count</code></td>
+<td>
+<p>Minimum times a word must appear to be included in the samples.
+High values help reduce model size.</p>
+</td></tr>
+<tr valign="top"><td><code>iter</code></td>
+<td>
+<p>Number of passes to make over the corpus in training.</p>
+</td></tr>
+<tr valign="top"><td><code>force</code></td>
+<td>
+<p>Whether to overwrite existing model files.</p>
+</td></tr>
+<tr valign="top"><td><code>negative_samples</code></td>
+<td>
+<p>Number of negative samples to take in skip-gram training. 0 means full sampling, while lower numbers
+give faster training. For large corpora 2-5 may work; for smaller corpora, 5-15 is reasonable.</p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+<p>The word2vec tool takes a text corpus as input and produces the
+word vectors as output. It first constructs a vocabulary from the
+training text data and then learns vector representation of words.
+The resulting word vector file can be used as features in many
+natural language processing and machine learning applications.
+</p>
+
+
+<h3>Value</h3>
+
+<p>A VectorSpaceModel object.
+</p>
+
+
+<h3>Author(s)</h3>
+
+<p>Jian Li &lt;<a href="mailto:rweibo@sina.com">rweibo@sina.com</a>&gt;, Ben Schmidt &lt;<a href="mailto:bmchmidt@gmail.com">bmchmidt@gmail.com</a>&gt;
+</p>
+
+
+<h3>References</h3>
+
+<p><a href="https://code.google.com/p/word2vec/">https://code.google.com/p/word2vec/</a>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+## Not run: 
+model = train_word2vec(system.file("examples", "rfaq.txt", package = "wordVectors"))
+
+## End(Not run)
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>wordVectors</em> version 2.0 <a href="00Index.html">Index</a>]</div>
+</body></html>

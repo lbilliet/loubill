@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Convert words to phrases</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for word2phrase {wordVectors}"><tr><td>word2phrase {wordVectors}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Convert words to phrases</h2>
+
+<h3>Description</h3>
+
+<p>Convert words to phrases in a text file.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+word2phrase(train_file, output_file, debug_mode = 0, min_count = 5,
+  threshold = 100, force = FALSE)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>train_file</code></td>
+<td>
+<p>Path of a single .txt file for training.
+Tokens are split on spaces.</p>
+</td></tr>
+<tr valign="top"><td><code>output_file</code></td>
+<td>
+<p>Path of output file</p>
+</td></tr>
+<tr valign="top"><td><code>debug_mode</code></td>
+<td>
+<p>debug mode. Must be 0, 1 or 2. 0 is silent; 1 print summary statistics;
+prints progress regularly.</p>
+</td></tr>
+<tr valign="top"><td><code>min_count</code></td>
+<td>
+<p>Minimum times a word must appear to be included in the samples.
+High values help reduce model size.</p>
+</td></tr>
+<tr valign="top"><td><code>threshold</code></td>
+<td>
+<p>Threshold value for determining if pairs of words are phrases.</p>
+</td></tr>
+<tr valign="top"><td><code>force</code></td>
+<td>
+<p>Whether to overwrite existing files at the output location. Default FALSE</p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+<p>This function attempts to learn phrases given a text document.
+It does so by progressively joining adjacent pairs of words with an '_' character.
+You can then run the code multiple times to create multiword phrases.
+Wrapper around code from the Mikolov's original word2vec release.
+</p>
+
+
+<h3>Value</h3>
+
+<p>The name of output_file, the trained file where common phrases are now joined.
+</p>
+
+
+<h3>Author(s)</h3>
+
+<p>Tomas Mikolov
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+## Not run: 
+model=word2phrase("text8","vec.txt")
+
+## End(Not run)
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>wordVectors</em> version 2.0 <a href="00Index.html">Index</a>]</div>
+</body></html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Improve a vectorspace by removing common elements.</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for improve_vectorspace {wordVectors}"><tr><td>improve_vectorspace {wordVectors}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Improve a vectorspace by removing common elements.</h2>
+
+<h3>Description</h3>
+
+<p>See reference for a full description. Supposedly, these operations will improve performance on analogy tasks.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+improve_vectorspace(vectorspace, D = round(ncol(vectorspace)/100))
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>vectorspace</code></td>
+<td>
+<p>A VectorSpacemodel to be improved.</p>
+</td></tr>
+<tr valign="top"><td><code>D</code></td>
+<td>
+<p>The number of principal components to eliminate.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>A VectorSpaceModel object, transformed from the original.
+</p>
+
+
+<h3>References</h3>
+
+<p>Jiaqi Mu, Suma Bhat, Pramod Viswanath. All-but-the-Top: Simple and Effective Postprocessing for Word Representations. https://arxiv.org/abs/1702.01417.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+
+closest_to(demo_vectors,"great")
+# stopwords like "and" and "very" are no longer top ten.
+# I don't know if this is really better, though.
+
+closest_to(improve_vectorspace(demo_vectors),"great")
+
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>wordVectors</em> version 2.0 <a href="00Index.html">Index</a>]</div>
+</body></html>

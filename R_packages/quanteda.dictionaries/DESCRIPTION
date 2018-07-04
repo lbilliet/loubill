@@ -1,0 +1,33 @@
+Package: quanteda.dictionaries
+Type: Package
+Title: Text Analysis Dictionaries
+Version: 0.2
+Authors@R: c( person("Kenneth", "Benoit", email = "kbenoit@lse.ac.uk", role =
+    c("aut", "cre", "cph")),
+    person("Stefan", "Müller", email = "mullers@tcd.ie", role = "aut"))
+Description: Provides text analysis dictionaries and additional functionality 
+    for their use in text analysis frameworks, especially quanteda.
+License: MIT + file LICENSE
+Depends: R (>= 3.1.0)
+Imports: quanteda (>= 1.2), stringi
+Suggests: covr, ggplot2, knitr, mgcv, quanteda.corpora, rmarkdown,
+        testthat
+Remotes: quanteda/quanteda.corpora
+Encoding: UTF-8
+LazyData: true
+VignetteBuilder: knitr
+RoxygenNote: 6.0.1
+Author: Kenneth Benoit [aut, cre, cph],
+  Stefan Müller [aut]
+Maintainer: Kenneth Benoit <kbenoit@lse.ac.uk>
+Built: R 3.5.1; ; 2018-07-04 09:10:55 UTC; windows
+RemoteType: github
+RemoteHost: https://api.github.com
+RemoteRepo: quanteda.dictionaries
+RemoteUsername: kbenoit
+RemoteRef: master
+RemoteSha: 951fc026586119bb7261131cdebb2b7639cfa65f
+GithubRepo: quanteda.dictionaries
+GithubUsername: kbenoit
+GithubRef: master
+GithubSHA1: 951fc026586119bb7261131cdebb2b7639cfa65f

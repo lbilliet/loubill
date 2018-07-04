@@ -1,0 +1,34 @@
+-,VectorSpaceModel,VectorSpaceModel-method
+                        VectorSpaceModel subtraction
+VectorSpaceModel-class
+                        Vector Space Model class
+[,VectorSpaceModel-method
+                        VectorSpaceModel indexing
+[[,VectorSpaceModel-method
+                        VectorSpaceModel subsetting
+as.VectorSpaceModel     Convert to a Vector Space Model
+closest_to              Return the n closest words in a
+                        VectorSpaceModel to a given vector.
+cosineDist              Cosine Distance
+cosineSimilarity        Cosine Similarity
+demo_vectors            999 vectors trained on teaching evaluations
+distend                 Compress or expand a vector space model along a
+                        vector.
+filter_to_rownames      Reduce by rownames
+improve_vectorspace     Improve a vectorspace by removing common
+                        elements.
+magnitudes              Vector Magnitudes
+nearest_to              Nearest vectors to a word
+normalize_lengths       Matrix normalization.
+plot,VectorSpaceModel-method
+                        Plot a Vector Space Model.
+prep_word2vec           Prepare documents for word2Vec
+project                 Project each row of an input matrix along a
+                        vector.
+read.binary.vectors     Read binary word2vec format files
+read.vectors            Read VectorSpaceModel
+reject                  Return a vector rejection for each element in a
+                        VectorSpaceModel
+train_word2vec          Train a model by word2vec.
+word2phrase             Convert words to phrases
+write.binary.word2vec   Write in word2vec binary format

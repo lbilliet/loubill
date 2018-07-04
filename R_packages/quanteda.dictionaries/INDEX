@@ -1,0 +1,21 @@
+data_char_testphrases   Sample short documents for testing
+data_dictionary_AFINN   Affective Norms for English Words (AFINN)
+data_dictionary_HuLiu   Positive and negative words from Hu and Liu
+                        (2004)
+data_dictionary_LaverGarry
+                        Laver and Garry Dictionary of Policy Positions
+data_dictionary_LoughranMcDonald
+                        Loughran and McDonald Sentiment Word Lists
+data_dictionary_MFD     Moral Foundations Dictionary
+data_dictionary_NRC     NRC Word-Emotion Association Lexicon
+data_dictionary_RID     Martindale's Regressive Imagery Dictionary
+                        (RID)
+data_dictionary_Rauh    Rauh's German Political Sentiment Dictionary
+data_dictionary_geninqposneg
+                        Augmented General Inquirer _Positiv_ and
+                        _Negativ_ dictionary
+data_dictionary_sentiws
+                        SentimentWortschatz (SentiWS)
+data_dictionary_uk2us   English UK-US spelling conversion dictionary
+liwcalike               Analyze text in a LIWC-alike fashion
+quanteda.dictionaries   quanteda.dictionaries

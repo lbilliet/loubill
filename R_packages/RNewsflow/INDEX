@@ -1,0 +1,27 @@
+delete.duplicates       Delete duplicate (or similar) documents from a
+                        document term matrix
+directed.network.plot   A wrapper for plot.igraph for visualizing
+                        directed networks.
+docnet                  Document similarity network for one news
+                        agency, and the print and online editions of
+                        two newspapers
+document.network        Create a document similarity network
+document.network.plot   Visualize (a subcomponent) of the document
+                        similarity network
+documents.compare       Compare the documents in two corpora/dtms
+dtm                     Document Term Matrix for one news agency, and
+                        the print and online editions of two newspapers
+filter.window           Filter edges from the document similarity
+                        network based on hour difference
+meta                    Meta information for one news agency, and the
+                        print and online editions of two newspapers
+network.aggregate       Aggregate the edges of a network by vertex
+                        attributes
+newsflow.compare        Compare the documents in a dtm with a sliding
+                        window over time
+only.first.match        Transform document network so that each
+                        document only matches the earliest dated
+                        matching document
+show.window             Show time window of document pairs
+term.day.dist           Calculate statistics for term occurence across
+                        days

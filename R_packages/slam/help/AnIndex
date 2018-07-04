@@ -34,7 +34,6 @@ simple_triplet_diag_matrix	matrix
 simple_triplet_matrix	matrix
 simple_triplet_zero_matrix	matrix
 simplify_simple_sparse_array	array
-slam_options	options
 tcrossapply_simple_triplet_matrix	apply
 tcrossprod_simple_triplet_matrix	crossprod
 write_stm_CLUTO	foreign

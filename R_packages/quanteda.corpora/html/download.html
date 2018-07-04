@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Download an RDS file from online locations</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for download {quanteda.corpora}"><tr><td>download {quanteda.corpora}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Download an RDS file from online locations</h2>
+
+<h3>Description</h3>
+
+<p>Download an RDS file from online locations
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+download(name = NULL, url = NULL, cache = TRUE, ...)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>name</code></td>
+<td>
+<p>name of a RDS file to download</p>
+</td></tr>
+<tr valign="top"><td><code>url</code></td>
+<td>
+<p>user-specified location of the RDS file to download</p>
+</td></tr>
+<tr valign="top"><td><code>cache</code></td>
+<td>
+<p>if <code>TRUE</code>, save downloaded file to temporary folder</p>
+</td></tr>
+<tr valign="top"><td><code>...</code></td>
+<td>
+<p>extra arguments passed to <code><a href="../../utils/html/download.file.html">download.file</a></code></p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+<p>Datasets currently available by <code>name</code> are: </p>
+
+<dl>
+<dt><code>data_corpus_guardian</code></dt><dd><p>6,000 Guradian newspaper articles in
+politics, economy, society and international sections from 2012 to 2016.</p>
+</dd>
+<dt><code>data_corpus_foreignaffairscommittee</code></dt><dd><p>Transcripts of all the 
+speeches at Japan's Committee on Foreign Affairs and Defense of the lower 
+house (Shugiin) from 1947 to 2017</p>
+</dd></dl>
+<p>.
+</p>
+
+
+<h3>Value</h3>
+
+<p>an unserialized R object
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+## Not run: 
+corp &lt;- download('data_corpus_guardian')
+corp &lt;- download('data_corpus_foreignaffairscommittee')
+
+## End(Not run)
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>quanteda.corpora</em> version 0.85 <a href="00Index.html">Index</a>]</div>
+</body></html>

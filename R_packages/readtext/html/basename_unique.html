@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Return basenames that are unique</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for basename_unique {readtext}"><tr><td>basename_unique {readtext}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Return basenames that are unique</h2>
+
+<h3>Description</h3>
+
+<p>Return basenames that are unique
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+basename_unique(x, path_only = FALSE)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>x</code></td>
+<td>
+<p>character vector; file paths</p>
+</td></tr>
+<tr valign="top"><td><code>path_only</code></td>
+<td>
+<p>logical; if <code>TRUE</code>, only return the unique part of the path</p>
+</td></tr>
+</table>
+
+
+<h3>Examples</h3>
+
+<pre>
+files &lt;- c("../data/glob/subdir1/test.txt", "../data/glob/subdir2/test.txt")
+readtext:::basename_unique(files)
+# [1] "subdir1/test.txt" "subdir2/test.txt"
+readtext:::basename_unique(files, path_only = TRUE)
+# [1] "subdir1" "subdir2"
+readtext:::basename_unique(c("../data/test1.txt", "../data/test2.txt"))
+# [1] "test1.txt" "test2.txt"
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>readtext</em> version 0.71 <a href="00Index.html">Index</a>]</div>
+</body></html>
