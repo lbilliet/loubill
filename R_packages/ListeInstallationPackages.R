@@ -37,4 +37,6 @@ devtools::install_github("quanteda/quanteda.corpora")#OK sur WIN YAF
 devtools::install_github("kbenoit/quanteda.dictionaries")#OK sur WIN YAF
 devtools::install_github("quanteda/spacyr")#OK sur WIN YAF
 devtools::install_github("quanteda/readtext")#OK sur WIN YAF
-library(quanteda)
+library(quanteda)#OK sur WIN YAF
+install.packages("readtext")
+library(readtext)#OK sur WIN YAF
