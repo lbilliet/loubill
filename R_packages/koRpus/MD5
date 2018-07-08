@@ -1,5 +1,5 @@
 383b12342880ecaa6388163e5adbcaf4 *CITATION
-1528c417e8efc70aa56df7bc4a2b5e22 *DESCRIPTION
+18c0be22b511c3572d2dee60a8c345e4 *DESCRIPTION
 2466dd141484c93be71cf3605640eb67 *INDEX
 6f20a78eec2ec9c0bca5aba8053a0582 *Meta/Rd.rds
 fafeb7e64e06eeb681f7f912f388c169 *Meta/data.rds
@@ -7,7 +7,7 @@ fafeb7e64e06eeb681f7f912f388c169 *Meta/data.rds
 d3f452cf75c91f6dc34ac7449a23dd91 *Meta/hsearch.rds
 7e1238616f81533735fdaf36c769e8bc *Meta/links.rds
 fb975f02f4ff7d18f02de4058784450e *Meta/nsInfo.rds
-1b0f8611f6d8e99111a7742cdb2f5e2b *Meta/package.rds
+5cb43df0e2284a1e41d30a27159cdad9 *Meta/package.rds
 0c03f8cc8f4bee2551f1dc4f2921696f *Meta/vignette.rds
 4bc774848817d77db6656dd8baa1dc44 *NAMESPACE
 cd5507d44b4fa63e2a7cf34623347188 *NEWS.Rd
@@ -28,9 +28,9 @@ d453a934e420419433e99389e9ebb62a *doc/index.html
 820ae73e1e7e1b5a022561d484516ab9 *doc/koRpus_vignette.pdf
 73ea514f0820c4fe6b2441bb0c0d69fa *help/AnIndex
 d43ee5c78aff959ea97b546351057fad *help/aliases.rds
-4e95f10abe96fdf1533b6661d594bc97 *help/koRpus.rdb
-bccf49ea84e755cc251f8a1744c06e21 *help/koRpus.rdx
-991af4c61f333ffb3e908238244b0e60 *help/paths.rds
+7f4c7be6077c68c642240710e77cfb0e *help/koRpus.rdb
+40f30b40744deb5e9052fcf980a2b5d8 *help/koRpus.rdx
+d8328e85a556c7d4a2ae819094282c1f *help/paths.rds
 e63678299d67df7d1dc7d8b76e321141 *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css
 129cffe4579e8358cad77e3739dd15ba *rkward/koRpus.pluginmap

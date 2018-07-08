@@ -1,5 +1,5 @@
-setwd("C:/Users/lb3_local/OneDrive/sync/git/loubill/Domino/R/MTX")
-# setwd("F:/OneDrive/sync/git/loubill/Domino/R/MTX")
+# setwd("C:/Users/lb3_local/OneDrive/sync/git/loubill/Domino/R/MTX")
+setwd("F:/OneDrive/sync/git/loubill/Domino/R/MTX")
 # setwd("/media/louis/EXCHWINLIN/Gdrive/sync/git/loubill/Domino/R/MTX")
 library(tm)
 library(quanteda)

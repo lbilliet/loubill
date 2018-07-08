@@ -16,6 +16,7 @@ vec.concat.mtx<-c(vec1.mtx, vec2.mtx, vec3.mtx)
 summary(vec.concat.mtx)
 vec.concat.mtx
 summary(vec.mtx)#pourquoi 50 ici ?
+head(unlist(vec.mtx, recursive = FALSE, use.names = FALSE))
 
 #reprocessing tokens
 tok.mtx<-tokens(vec.concat.mtx) 

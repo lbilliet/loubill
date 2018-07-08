@@ -19,7 +19,7 @@ RoxygenNote: 6.0.1
 Author: Kenneth Benoit [aut, cre, cph],
   Akitaka Matsuo [aut]
 Maintainer: Kenneth Benoit <kbenoit@lse.ac.uk>
-Built: R 3.5.1; ; 2018-07-04 09:11:52 UTC; windows
+Built: R 3.5.1; ; 2018-07-08 14:31:05 UTC; windows
 RemoteType: github
 RemoteHost: https://api.github.com
 RemoteRepo: spacyr

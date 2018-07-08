@@ -8,5 +8,6 @@ rowapply_simple_triplet_matrix
                         Apply Functions Over Sparse Matrix Margins
 simple_sparse_array     Simple Sparse Arrays
 simple_triplet_matrix   Simple Triplet Matrix
+slam_options            Options for the 'slam' package
 tcrossprod_simple_triplet_matrix
                         Matrix Crossproduct

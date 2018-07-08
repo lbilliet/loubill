@@ -1,4 +1,4 @@
-767e5d12ae65efa3aec4cf7e6a512352 *DESCRIPTION
+e008a1ca54eefeea5ce76da3cda97e83 *DESCRIPTION
 e67b5d5f0a12b07b3ca553d7e3530b77 *INDEX
 cf264cdd2cedf2c0bbbde0ffcbeaaedd *Meta/Rd.rds
 f7650e47c7ac70063ec6a954368ca094 *Meta/data.rds
@@ -6,7 +6,7 @@ f7650e47c7ac70063ec6a954368ca094 *Meta/data.rds
 9529dd51429479f0e40f7c937f4fc864 *Meta/hsearch.rds
 b8eb527dbc5f28e2fdc7a7bb70ceeb62 *Meta/links.rds
 ea23b7eb16d3e420b5f76de03fe3594a *Meta/nsInfo.rds
-7490873be2eac400e674e147b8e84a1b *Meta/package.rds
+daa42ecf05516345428401e611d96995 *Meta/package.rds
 6d95de4163c1c95b85c334d0fa3c0d76 *NAMESPACE
 4f0752c5608093bf5612d3e119811baa *NEWS
 ebf0fc819595d631b8bf280c4b049940 *R/wordcloud
@@ -15,12 +15,12 @@ d6f7785d706d363d017fa468b87e8d67 *R/wordcloud.rdb
 7c93d9086a9e6f9bf31c089d0f2c2218 *data/SOTU.RData
 071ba41b57a31f38b90b380d7ed61fbd *help/AnIndex
 667d1d36c161169f47ca69e4983e9d8b *help/aliases.rds
-32be7a5b1eba07ec492a91af8227b803 *help/paths.rds
-089f34a420ce2ab4a58ca7a08c1e1e34 *help/wordcloud.rdb
-149409f5d8557651dfbe46a77c46bab6 *help/wordcloud.rdx
+a6ab1c1ebdd49bcae4a114daf89a1f28 *help/paths.rds
+07d6a7a17c49ceaea2ac6b000a0ee800 *help/wordcloud.rdb
+979e444806d1a5b45b32b00add683885 *help/wordcloud.rdx
 3d80a0dcb565d626a3f40414e554efbf *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css
 7418fcfc7cfbef9fcd1f32394d06ca7b *libs/i386/symbols.rds
-03ebd0e712afe03724c62e10c3e130f7 *libs/i386/wordcloud.dll
+14466e303a87b09b7e6eaeeb89b0f1a7 *libs/i386/wordcloud.dll
 b68a8b5d556c4c5699fbc6bac401e1dc *libs/x64/symbols.rds
-8ae6ace63aea8e298d188e96d2654f70 *libs/x64/wordcloud.dll
+44b3692a2834e79b401eb2f8e0529b8f *libs/x64/wordcloud.dll
