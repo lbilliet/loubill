@@ -39,14 +39,15 @@ for (i in 1 : length(vec.alt)){
 head(bow.alt)
 
 #### construction vecteur comme corpus des documents
-vec.mtx<-c(bow.mtx,bow.alt)
+vec.indications.mtx<-c(bow.mtx,bow.alt)
 
 #####construction DFM
-dfm.mtx<-dfm(vec.mtx, remove_punct=TRUE, remove_numbers = TRUE, tolower = TRUE, verbose = TRUE)
+stopwords.fr<-stopwords(language = "fr", source = "stopwords-iso")
+dfm.mtx<-dfm(vec.indications.mtx, remove = stopwords.fr, remove_punct=TRUE, remove_numbers = TRUE, tolower = TRUE, verbose = TRUE)
 dfm.mtx
+dfm.mtx[1:2,1:10]
 
 ####cosine sim
 dist<-textstat_simil(dfm.mtx, margin="documents", method="cosine")
-head(dist)
-print(dist)
+dist
 as.data.frame(as.matrix(dist))

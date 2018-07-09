@@ -41,4 +41,6 @@ library(quanteda)#OK sur WIN YAF + WIN tour
 install.packages("readtext")
 library(readtext)#OK sur WIN YAF + WIN tour
 install.packages("tidyr")
-library(tidyr)#OK sur WIN tour
+library(tidyr)#OK sur WIN tour + WIN YAF
+install.packages("stopwords")
+library(stopwords)#OK sur WIN YAF

@@ -1,4 +1,4 @@
-6da25e86888f54577f70f085433d55ff *DESCRIPTION
+0116a8634d53d39f76e5e212ea5e1559 *DESCRIPTION
 90a06acac9f5696d6d8a4cd35f762e6a *INDEX
 696c8b1b97909173e185524e4b456120 *LICENSE
 c3df796a0641489f46b83182be2b40bd *Meta/Rd.rds
@@ -7,7 +7,7 @@ e960c088565ceb465add3da8025a9b01 *Meta/data.rds
 569242f1b5824427535dead88533a8c1 *Meta/hsearch.rds
 d4effc6ce8047d680041acfa0d25ea8e *Meta/links.rds
 0e97b536228bcb94c2d86be13c438e5a *Meta/nsInfo.rds
-fefd86cd423e49a10bab99095c066085 *Meta/package.rds
+4337a55eddb897e0250b610f598092c2 *Meta/package.rds
 8d793082294d93133f10c45a3d05ee2f *NAMESPACE
 34cc2676326077943952d3a235f74c55 *NEWS
 ebf0fc819595d631b8bf280c4b049940 *R/stopwords
@@ -18,8 +18,8 @@ ad80b640bfb1d0aa915b3f1919c9652c *data/Rdata.rds
 b5152c80f6ad8aee8c337eb5e6c98da1 *data/Rdata.rdx
 df16c565886f06a6b1d4782594a54f51 *help/AnIndex
 2b7cce0aa604e075e5adda110d3c0657 *help/aliases.rds
-68dcb9b3fb3b9bd801a79ea54ad81279 *help/paths.rds
-43888bacfa6ed9d55e65cddcff30988f *help/stopwords.rdb
-549e066e1a3e506c935d76c80626ad68 *help/stopwords.rdx
+332031c1ac54f8fcd85a8f35d4fe4aee *help/paths.rds
+893c20356331c8d6d5362de249bc5015 *help/stopwords.rdb
+d59d64ca4b8d415398444dd25254d7b6 *help/stopwords.rdx
 86ad5829048005a07a719cb766c26dd7 *html/00Index.html
 b6763e6916890c631fdc3f2643803b1a *html/R.css
