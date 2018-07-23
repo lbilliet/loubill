@@ -25,3 +25,6 @@ df[1:3,c("QI","sexe")]
 #toutes les données relatives à Paul et Capucine
 df[c("Paul","Capucine"),]
 
+attach(df)#crée ici une variable pour chaque colonne, portant le nom de cette colonne. Par contre pas dispo dans l'environnement
+taille
+poids
