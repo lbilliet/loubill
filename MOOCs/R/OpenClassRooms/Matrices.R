@@ -1,18 +1,7 @@
-rm(list = ls())
-chemRepTr <- getwd()
-chemRepTr
-resRchYaf <- grep("lb3", chemRepTr, ignore.case = T)
-resRchYaf
-resRchTourLin <- grep("/home/louis", chemRepTr, ignore.case = T)
-resRchTourLin
-if (resRchYaf == 1) {
-  setwd("C:/Users/lb3/OneDrive/sync/git/")
-} else if (resRchTourLin == 1) {
-  setwd("~/git/")
-}
-rm(chemRepTr, resRchTourLin, resRchYaf)
-getwd()
-setwd("loubill/Domino/R/RMooc/OpenClassRooms/")
+source("CleanWd.R")
+wd()
+rm(list=ls())
+setwd("loubill/MOOCs/R/OpenClassRooms/")
 #comme pour les vecteurs, les matrices ne peuvent contenir qu'un seul type d'élément (num / char / bool)
 #toutes les colonnes doivent avoir la même longueur, toutes les lignes même longueur aussi
 
@@ -34,11 +23,13 @@ Pierre <- c(8,9,15)
 Nathalie <- c(17,12,13)
 Jacques <- c(11,15,7)
 Julie <- c(5,12,19)
-mtxNotes<-matrix(c(Pierre,Nathalie,Jacques,Julie), nrow=4,ncol = 3,byrow = T)
+
+mtxNotes<-matrix(data=c(Pierre,Nathalie,Jacques,Julie), nrow = 4, ncol = 3, byrow = T)
 mtxNotes
 rownames(mtxNotes)<-c("Pierre","Nathalie","Jacques","Julie")
 colnames(mtxNotes)<-c("histoire","biologie","sport")
 mtxNotes
+
 
 mtxNotes[sort(rownames(mtxNotes))[1:3], colnames(mtxNotes)[c(1,3)]] ### que renvoie ce code ?
 mtxNotes[c("Jacques","Julie","Nathalie"),c("histoire","sport")]
