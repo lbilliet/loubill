@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Easy scatterplot plot using ggplot2</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for ggplot2.scatterplot {easyGgplot2}"><tr><td>ggplot2.scatterplot {easyGgplot2}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Easy scatterplot plot using ggplot2</h2>
+
+<h3>Description</h3>
+
+<p>Draw easily a scatter plot using ggplot2 package
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+ggplot2.scatterplot(data, xName, yName, groupName = NULL,
+  addRegLine = FALSE, regLineColor = "blue", regLineSize = 0.5,
+  smoothingMethod = c("lm", "glm", "gam", "loess", "rlm"),
+  addConfidenceInterval = FALSE, confidenceLevel = 0.95,
+  confidenceIntervalFill = "#C7C7C7", setColorByGroupName = TRUE,
+  setShapeByGroupName = FALSE, groupColors = NULL, brewerPalette = NULL,
+  ...)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>data</code></td>
+<td>
+<p>data.frame or a numeric vector. Columns are variables and rows
+are observations.</p>
+</td></tr>
+<tr valign="top"><td><code>xName</code></td>
+<td>
+<p>The name of column containing x variable (i.e groups).</p>
+</td></tr>
+<tr valign="top"><td><code>yName</code></td>
+<td>
+<p>The name of column containing y variable.</p>
+</td></tr>
+<tr valign="top"><td><code>groupName</code></td>
+<td>
+<p>The name of column containing group variable. This variable
+is used to color plot according to the group.</p>
+</td></tr>
+<tr valign="top"><td><code>addRegLine</code></td>
+<td>
+<p>If TRUE, regression line is added. Default value is FALSE.</p>
+</td></tr>
+<tr valign="top"><td><code>regLineColor</code></td>
+<td>
+<p>Color of regression line. Default value is blue.</p>
+</td></tr>
+<tr valign="top"><td><code>regLineSize</code></td>
+<td>
+<p>Weight of regression line. Default value is 0.5.</p>
+</td></tr>
+<tr valign="top"><td><code>smoothingMethod</code></td>
+<td>
+<p>Smoothing method (function) to use, eg. lm, glm, gam,
+loess, rlm. For datasets with n &lt; 1000 default is loess. For datasets with
+1000 or more observations defaults to gam. lm for linear smooths, glm for
+generalised linear smooths, loess for local smooths, gam fits a generalized
+additive model.</p>
+</td></tr>
+<tr valign="top"><td><code>addConfidenceInterval</code></td>
+<td>
+<p>Display confidence interval around smooth?
+(FALSE by default).</p>
+</td></tr>
+<tr valign="top"><td><code>confidenceLevel</code></td>
+<td>
+<p>Level controling confidence region. Default is 95%</p>
+</td></tr>
+<tr valign="top"><td><code>confidenceIntervalFill</code></td>
+<td>
+<p>Fill color of confidence intervall</p>
+</td></tr>
+<tr valign="top"><td><code>setColorByGroupName</code></td>
+<td>
+<p>If TRUE, points are colored according the groups.
+Default value is TRUE.</p>
+</td></tr>
+<tr valign="top"><td><code>setShapeByGroupName</code></td>
+<td>
+<p>If TRUE, point shapes are different according to
+the group. Default value is FALSE.</p>
+</td></tr>
+<tr valign="top"><td><code>groupColors</code></td>
+<td>
+<p>Color of groups. groupColors should have the same length
+as groups.</p>
+</td></tr>
+<tr valign="top"><td><code>brewerPalette</code></td>
+<td>
+<p>This can be also used to indicate group colors. In this
+case the parameter groupColors should be NULL. e.g: brewerPalette=&quot;Paired&quot;.</p>
+</td></tr>
+<tr valign="top"><td><code>...</code></td>
+<td>
+<p>Other parameters passed on to ggplot2.customize custom function
+or to geom_smooth and to geom_point functions from ggplot2 package.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>a ggplot
+</p>
+
+
+<h3>Author(s)</h3>
+
+<p>Alboukadel Kassambara &lt;alboukadel.kassambara@gmail.com&gt;
+</p>
+
+
+<h3>References</h3>
+
+<p>http://www.sthda.com
+</p>
+
+
+<h3>See Also</h3>
+
+<p><code><a href="ggplot2.dotplot.html">ggplot2.dotplot</a>, <a href="ggplot2.violinplot.html">ggplot2.violinplot</a>,
+<a href="ggplot2.stripchart.html">ggplot2.stripchart</a>, <a href="ggplot2.boxplot.html">ggplot2.boxplot</a>, <a href="ggplot2.histogram.html">ggplot2.histogram</a>,
+<a href="ggplot2.lineplot.html">ggplot2.lineplot</a>, <a href="ggplot2.barplot.html">ggplot2.barplot</a></code>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+df &lt;- mtcars
+ggplot2.scatterplot(data=df, xName='wt',yName='mpg', size=3,
+                mainTitle="Plot of miles per gallon \n according to the weight",
+                xtitle="Weight (lb/1000)", ytitle="Miles/(US) gallon")
+
+#Or use this
+plot&lt;-ggplot2.scatterplot(data=df, xName='wt',yName='mpg', size=3)
+plot&lt;-ggplot2.customize(plot, mainTitle="Plot of miles per gallon \n according to the weight",
+                        xtitle="Weight (lb/1000)", ytitle="Miles/(US) gallon")
+print(plot)
+
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>easyGgplot2</em> version 1.0.0.9000 <a href="00Index.html">Index</a>]</div>
+</body></html>

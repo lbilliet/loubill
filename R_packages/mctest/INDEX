@@ -1,0 +1,10 @@
+Hald                    Portland Cement benchmark of Hald(1952)
+eigprop                 Eigenvalues and Variance Decomposition
+                        Proportion
+imcdiag                 Individual Multicollinearity Diagnostic
+                        Measures
+mc.plot                 Plot of VIF and Eigenvalues
+mctest                  Multicollinearity diagnostic measures
+mctest-package          Overall and Individual Multicollinearity
+                        Diagnostic Measures
+omcdiag                 Overall Multicollinearity Diagnostics Measures

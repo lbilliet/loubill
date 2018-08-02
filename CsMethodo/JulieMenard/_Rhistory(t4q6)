@@ -1,0 +1,39 @@
+getwd()
+rm(list = ls())
+source("CleanWd.R")
+wd()
+setwd("loubill/")
+nomFichier <- "data/Classeur.xls"
+df <- read_xls(nomFichier, col_names = T, na = "")
+nomFichier <- "data/Classeur.xls"
+df <- read_xls(nomFichier, col_names = T, na = "")
+library(readxl)
+library(Epi)
+library(dplyr)
+nomFichier <- "data/Classeur.xls"
+df <- read_xls(nomFichier, col_names = T, na = "")
+rm(list = ls())
+source("CleanWd.R")
+wd()
+setwd("loubill/CsMethodo/JulieMenard/")
+library(readxl)
+library(Epi)
+library(dplyr)
+nomFichier <- "data/Classeur.xls"
+df <- read_xls(nomFichier, col_names = T, na = "")
+View(df)
+Unaccent <- function(text) {
+text <- gsub("['`^~\": ]", "_", text)
+text <- gsub("[éèëê]", "e", text)
+text <- gsub("[àäâ]", "a", text)
+return(text)
+}
+names(df) <- Unaccent(names(df))
+text <- gsub("['`^~\": /]", "_", text)
+Unaccent <- function(text) {
+text <- gsub("['`^~\": /]", "_", text)
+text <- gsub("[éèëê]", "e", text)
+text <- gsub("[àäâ]", "a", text)
+return(text)
+}
+names(df) <- Unaccent(names(df))

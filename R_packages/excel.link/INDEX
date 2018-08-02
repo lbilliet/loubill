@@ -1,0 +1,21 @@
+COMStop                 Functions from RDCOMClient package
+current.graphics        Auxiliary function for export graphics to
+                        Microsoft Excel
+excel.link              excel.link: convenient data exchange with
+                        Microsoft Excel
+xl                      Data exchange with running Microsoft Excel
+                        instance.
+xl.bind.range           Active bindings to Excel ranges
+xl.connect.table        Live connection with data on Microsoft Excel
+                        sheet
+xl.current.region       Read/write from/to Excel current region.
+xl.get.excel            Returns reference to Excel application.
+xl.index2address        Converts Excel address to indexes and vice
+                        versa.
+xl.property             Excel constants and helper function for setting
+                        Excel range properties.
+xl.read.file            Functions for saving and reading data to/from
+                        Excel file.
+xl.sheet.add            Basic operations with worksheets.
+xl.workbook.add         Basic operations with Excel workbooks
+xl.write                Methods for writing data to Excel sheet

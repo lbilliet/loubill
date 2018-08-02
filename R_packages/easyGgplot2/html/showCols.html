@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Generate a plot of color names which R knows about.</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for showCols {easyGgplot2}"><tr><td>showCols {easyGgplot2}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Generate a plot of color names which R knows about.</h2>
+
+<h3>Description</h3>
+
+<p>Generate R color names.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+showCols(cl = colors(), bg = "grey", cex = 0.75, rot = 30)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>cl</code></td>
+<td>
+<p>A vector of colors to plot. Default value is the list of color
+names returned by R color() function.</p>
+</td></tr>
+<tr valign="top"><td><code>bg</code></td>
+<td>
+<p>Background color of the plot</p>
+</td></tr>
+<tr valign="top"><td><code>cex</code></td>
+<td>
+<p>The size of the text.</p>
+</td></tr>
+<tr valign="top"><td><code>rot</code></td>
+<td>
+<p>The rotation angle of the text</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>a ggplot
+</p>
+
+
+<h3>Author(s)</h3>
+
+<p>Alboukadel Kassambara &lt;alboukadel.kassambara@gmail.com&gt;
+</p>
+
+
+<h3>References</h3>
+
+<p>http://www.sthda.com
+</p>
+
+
+<h3>See Also</h3>
+
+<p><code><a href="generateRLineTypes.html">generateRLineTypes</a>, <a href="generateRPointShapes.html">generateRPointShapes</a></code>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+
+col=colors() #list of color names
+showCols(col[1:100]) #plot the first 100 colors
+
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>easyGgplot2</em> version 1.0.0.9000 <a href="00Index.html">Index</a>]</div>
+</body></html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Customize x and y axis of a plot generated with ggplot2...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for ggplot2.setAxis {easyGgplot2}"><tr><td>ggplot2.setAxis {easyGgplot2}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Customize x and y axis of a plot generated with ggplot2 package</h2>
+
+<h3>Description</h3>
+
+<p>Customize x and y axis of a plot generated with ggplot2 package
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+ggplot2.setAxis(plot, xShowTitle = TRUE, yShowTitle = TRUE, xtitle = NULL,
+  ytitle = NULL, xtitleFont = c(14, "bold", "black"), ytitleFont = c(14,
+  "bold", "black"), xlim = NULL, ylim = NULL, xScale = c("none", "log2",
+  "log10"), yScale = c("none", "log2", "log10"), xShowTickLabel = TRUE,
+  yShowTickLabel = TRUE, xTickLabelFont = c(12, "bold", "black"),
+  yTickLabelFont = c(12, "bold", "black"), xtickLabelRotation = 0,
+  ytickLabelRotation = 0, hideAxisTicks = FALSE, axisLine = c(0.5,
+  "solid", "#E5E5E5"))
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>plot</code></td>
+<td>
+<p>A plot object generated with ggplot2 or easyGgplot2 packages
+(boxplot, densityplot, histogram, dotplot, ....)</p>
+</td></tr>
+<tr valign="top"><td><code>xShowTitle, yShowTitle</code></td>
+<td>
+<p>if TRUE, x axis and y axis titles will be
+shown. <strong>Default values are TRUE.</strong></p>
+</td></tr>
+<tr valign="top"><td><code>xtitle, ytitle</code></td>
+<td>
+<p>x and y axis labels.</p>
+</td></tr>
+<tr valign="top"><td><code>xtitleFont, ytitleFont</code></td>
+<td>
+<p>A vector of length 3 indicating respectively
+the size, the style and the color of x and y axis titles. <strong>Default
+values are c(14,&quot;bold&quot;, &quot;black&quot;).</strong></p>
+</td></tr>
+<tr valign="top"><td><code>xlim, ylim</code></td>
+<td>
+<p>Limit for the x and y axis. <strong>Default values are
+NULL</strong>.</p>
+</td></tr>
+<tr valign="top"><td><code>xScale, yScale</code></td>
+<td>
+<p>x and y axis scales. Possible values are c(&quot;none&quot;,
+&quot;log2&quot;, &quot;log10&quot;). Example: yScale=&quot;log2&quot;. <strong>Default values are
+&quot;none&quot;.</strong></p>
+</td></tr>
+<tr valign="top"><td><code>xShowTickLabel, yShowTickLabel</code></td>
+<td>
+<p>if TRUE, x and y axis tick mark labels
+will be shown. <strong>Default values are TRUE.</strong></p>
+</td></tr>
+<tr valign="top"><td><code>xTickLabelFont, yTickLabelFont</code></td>
+<td>
+<p>A vector of length 3 indicating
+respectively the size, the style and the color of x and y axis tick label
+fonts. <strong>Default values are c(12, &quot;bold&quot;, &quot;black&quot;).</strong></p>
+</td></tr>
+<tr valign="top"><td><code>xtickLabelRotation, ytickLabelRotation</code></td>
+<td>
+<p>Rotation angle of x and y axis
+tick labels. <strong>Default values are 0.</strong></p>
+</td></tr>
+<tr valign="top"><td><code>hideAxisTicks</code></td>
+<td>
+<p>if TRUE, x and y axis ticks are removed.
+<strong>Default value is FALSE</strong>.</p>
+</td></tr>
+<tr valign="top"><td><code>axisLine</code></td>
+<td>
+<p>A vector of length 3 indicating respectively the size, the
+line type and the color of axis lines.<strong> Default value is c(0.5,
+&quot;solid&quot;, &quot;#E5E5E5&quot;).</strong></p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>a ggplot
+</p>
+
+
+<h3>Author(s)</h3>
+
+<p>Alboukadel Kassambara &lt;alboukadel.kassambara@gmail.com&gt;
+</p>
+
+
+<h3>References</h3>
+
+<p>http://www.sthda.com
+</p>
+
+
+<h3>See Also</h3>
+
+<p><code><a href="ggplot2.customize.html">ggplot2.customize</a></code>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+
+#Boxplot using easyGgplot2 package
+p&lt;-ggplot2.boxplot(data=ToothGrowth, xName='dose',yName='len')
+ggplot2.setAxis(p, xtitle="Dose (mg)", ytitle="length", 
+                axisLine=c(0.5, "solid", "black"))
+
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>easyGgplot2</em> version 1.0.0.9000 <a href="00Index.html">Index</a>]</div>
+</body></html>

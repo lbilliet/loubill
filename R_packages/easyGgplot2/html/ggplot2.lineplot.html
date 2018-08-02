@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Easy line plot plot with R package ggplot2</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for ggplot2.lineplot {easyGgplot2}"><tr><td>ggplot2.lineplot {easyGgplot2}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Easy line plot plot with R package ggplot2</h2>
+
+<h3>Description</h3>
+
+<p>Draw a line plot using ggplot2
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+ggplot2.lineplot(data, xName, yName, groupName = NULL, addPoint = FALSE,
+  pointSize = 1.5, pointShape = 19, pointFill = NULL,
+  pointColor = "black", arrow = NULL, xAxisType = c("categorical",
+  "continuous"), groupColors = NULL, brewerPalette = NULL, ...)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>data</code></td>
+<td>
+<p>data.frame or a numeric vector. Columns are variables and rows
+are observations.</p>
+</td></tr>
+<tr valign="top"><td><code>xName</code></td>
+<td>
+<p>The name of column containing x variable (i.e groups).</p>
+</td></tr>
+<tr valign="top"><td><code>yName</code></td>
+<td>
+<p>The name of column containing y variable.</p>
+</td></tr>
+<tr valign="top"><td><code>groupName</code></td>
+<td>
+<p>The name of column containing group variable. This variable
+is used to color plot according to the group.</p>
+</td></tr>
+<tr valign="top"><td><code>addPoint</code></td>
+<td>
+<p>If TRUE, points are added to the plot. Default value is
+FALSE.</p>
+</td></tr>
+<tr valign="top"><td><code>pointSize, pointShape, pointFill, pointColor</code></td>
+<td>
+<p>Modify point size, shape,
+fill and color.</p>
+</td></tr>
+<tr valign="top"><td><code>arrow</code></td>
+<td>
+<p>arrow is function from package grid. This function Describe
+arrows to add to a line. See ?grid::arrow for more details. Usage :
+arrow=arrow(). Default value is NULL.</p>
+</td></tr>
+<tr valign="top"><td><code>xAxisType</code></td>
+<td>
+<p>Indicate the type of x-axis. Possible values
+=c(&quot;categorical&quot;, &quot;continuous&quot;). Default value is &quot;categorical&quot;. When the
+variable on the x-axis is numeric, it is sometimes useful to treat it as
+continuous, and sometimes useful to treat it as categorical.</p>
+</td></tr>
+<tr valign="top"><td><code>groupColors</code></td>
+<td>
+<p>Color of groups. groupColors should have the same length
+as groups.</p>
+</td></tr>
+<tr valign="top"><td><code>brewerPalette</code></td>
+<td>
+<p>This can be also used to indicate group colors. In this
+case the parameter groupColors should be NULL. e.g: brewerPalette=&quot;Paired&quot;.</p>
+</td></tr>
+<tr valign="top"><td><code>...</code></td>
+<td>
+<p>Other arguments passed on to ggplot2.customize custom function
+or to geom_line functions from ggplot2 package.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>a ggplot
+</p>
+
+
+<h3>Author(s)</h3>
+
+<p>Alboukadel Kassambara &lt;alboukadel.kassambara@gmail.com&gt;
+</p>
+
+
+<h3>References</h3>
+
+<p>http://www.sthda.com
+</p>
+
+
+<h3>See Also</h3>
+
+<p><code><a href="ggplot2.barplot.html">ggplot2.barplot</a></code>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+
+#data
+df &lt;- data.frame(time = factor(c("Lunch","Dinner"), levels=c("Lunch","Dinner")),
+                 total_bill = c(14.89, 17.23))
+
+#plot
+ggplot2.lineplot(data=df, xName="time", yName='total_bill',
+                mainTitle="Plot of total bill\n per time of day",
+                xtitle="Time of day", ytitle="Total bill")
+
+#Or use this
+plot&lt;-ggplot2.lineplot(data=df, xName="time", yName='total_bill')
+plot&lt;-ggplot2.customize(plot,  mainTitle="Plot of total bill\n per time of day",
+                      xtitle="Time of day", ytitle="Total bill")
+print(plot)
+
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>easyGgplot2</em> version 1.0.0.9000 <a href="00Index.html">Index</a>]</div>
+</body></html>

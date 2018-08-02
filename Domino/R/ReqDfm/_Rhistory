@@ -1,0 +1,215 @@
+source("fonctionDates.R")
+## adresse de l'endpoint SPARQL
+# endpoint <- "http://172.16.90.22:8889/bigdata/namespace/doctissimoGrossesse_2010-2015_fullindex/sparql"
+endpoint <- "http://172.16.90.22:8089/bigdata/namespace/doctissimoFullIndex/sparql"
+library(stringr)
+nomMedicament <- c("METHOTREXATE")
+df <- search_medicament(endpoint, nomMedicament)
+df <- unique(df)
+nomMedicament <- "plavix"
+df <- search_medicament(endpoint, nomMedicament)
+df <- unique(df)
+View(df)
+View(df)
+nomMedicament <- "PLAVIX"
+df <- search_medicament(endpoint, nomMedicament)
+df <- unique(df)
+nomMedicament <- "kardegic"
+df <- search_medicament(endpoint, nomMedicament)
+df <- unique(df)
+View(df)
+nomMedicament <- "quinimax"
+df <- search_medicament(endpoint, nomMedicament)
+df <- unique(df)
+nomMedicament <- "baclofene"
+df <- search_medicament(endpoint, nomMedicament)
+df <- unique(df)
+View(df)
+nomMedicament <- "tahor"
+df <- search_medicament(endpoint, nomMedicament)
+df <- unique(df)
+nomMedicament <- "ibuprofene"
+df <- search_medicament(endpoint, nomMedicament)
+df <- unique(df)
+nomMedicament <- "volaterene"
+df <- search_medicament(endpoint, nomMedicament)
+df <- unique(df)
+nomMedicament <- "voltarene"
+df <- search_medicament(endpoint, nomMedicament)
+df <- unique(df)
+nomMedicament <- "spasfon"
+df <- search_medicament(endpoint, nomMedicament)
+df <- unique(df)
+### charger les indications
+source("indications.R")
+indicationsSelection <- lapply(nomsCommerciaux, function(x){
+getIndication(x)
+})
+nomsCommerciaux <- c("methotrexate","baclofene","ibuprofene","voltarene")
+indicationsSelection <- lapply(nomsCommerciaux, function(x){
+getIndication(x)
+})
+warnings()
+View(indications)
+indications <- read.table("indications/theriaque_indication_cim10.csv",sep=",", header=F,quote = "\"",encoding = "ISO-8859-1"
+)
+indicationsSelection <- lapply(nomsCommerciaux, function(x){
+getIndication(x)
+})
+BN <- "methotrexate"
+bool <- grepl(BN, indications$medicament, ignore.case = T)
+sum(bool)
+View(indications)
+### charger les indications
+source("indications.R")
+indicationsSelection <- lapply(nomsCommerciaux, function(x){
+getIndication(x)
+})
+()
+warnings()
+indicationsSelection
+df <- search_medicament(endpoint, "PSORIASIS")
+df <- unique(df)
+View(df)
+View(df)
+df <- search_medicament(endpoint, "GEU")
+df <- unique(df)
+View(df)
+httr::GET(url = "http://91.121.106.228:8891/CTapi-0.0.1-SNAPSHOT/CTstringInputBody")
+df$contentPost
+# setwd("F:/OneDrive/sync/git/loubill/Domino/R/MTX")
+# setwd("/media/louis/EXCHWINLIN/Gdrive/sync/git/loubill/Domino/R/MTX")
+library(tm)
+stopwords.fr<-stopwords(language = "fr", source = "stopwords-iso")
+colnames(df)
+geu <- paste0(df$contentPost)
+dfmGeu<-dfm(geu, remove = stopwords.fr, remove_punct=TRUE, remove_numbers = TRUE, tolower = TRUE, verbose = TRUE)
+library(quanteda)
+dfmGeu<-quanteda::dfm(geu, remove = stopwords.fr, remove_punct=TRUE, remove_numbers = TRUE, tolower = TRUE, verbose = TRUE)
+stopwords.fr
+stopwords.fr<-stopwords(language = "fr", source = "stopwords-iso")
+stopwords.fr<- quanteda::stopwords(language = "fr", source = "stopwords-iso")
+dfmGeu<-quanteda::dfm(geu, remove = stopwords.fr, remove_punct=TRUE, remove_numbers = TRUE,
+tolower = TRUE, verbose = TRUE)
+getPosts = function(term){
+df <- search_medicament(endpoint, term)
+df <- unique(df)
+concatenation <- paste0(df$contentPost)
+return(concatenation)
+}
+getPosts = function(term){
+df <- search_medicament(endpoint, term)
+df <- unique(df)
+concatenation <- paste0(df$contentPost)
+matrice <- quanteda::dfm(concatenation, remove = stopwords.fr, remove_punct=TRUE, remove_numbers = TRUE,
+tolower = TRUE, verbose = TRUE)
+return(matrice)
+}
+getMatrice = function(term){
+df <- search_medicament(endpoint, term)
+df <- unique(df)
+concatenation <- paste0(df$contentPost)
+matrice <- quanteda::dfm(concatenation, remove = stopwords.fr, remove_punct=TRUE, remove_numbers = TRUE,
+tolower = TRUE, verbose = TRUE)
+return(matrice)
+}
+dfmMehotrexate <- getMatrice("methotrexate")
+dfmMehotrexate <- getMatrice("psoriaris")
+dfmMehotrexate <- getMatrice("methotrexate")
+dfmPsoriasis <- getMatrice("psoriaris")
+dfmMehotrexate
+getConcatenation = function(term){
+df <- search_medicament(endpoint, term)
+df <- unique(df)
+concatenation <- paste0(df$contentPost)
+#matrice <- quanteda::dfm(concatenation, remove = stopwords.fr, remove_punct=TRUE, remove_numbers = TRUE,
+#             tolower = TRUE, verbose = TRUE)
+return(concatenation)
+}
+geuContent <-getMatrice("geu")
+methotrexateContent <- getMatrice("methotrexate")
+psoriasisContent <- getMatrice("psoriaris")
+matrice <- quanteda::dfm(c(geuContent, methotrexateContent,
+psoriasisContent),
+remove = stopwords.fr, remove_punct=TRUE, remove_numbers = TRUE,
+tolower = TRUE, verbose = TRUE)
+str(psoriasisContent)
+getConcatenation = function(term){
+df <- search_medicament(endpoint, term)
+df <- unique(df)
+concatenation <- paste0(df$contentPost)
+#matrice <- quanteda::dfm(concatenation, remove = stopwords.fr, remove_punct=TRUE, remove_numbers = TRUE,
+#             tolower = TRUE, verbose = TRUE)
+return(concatenation)
+}
+geuContent <-getConcatenation("geu")
+methotrexateContent <- getConcatenation("methotrexate")
+psoriasisContent <- getConcatenation("psoriaris")
+matrice <- quanteda::dfm(c(geuContent, methotrexateContent,
+psoriasisContent),
+remove = stopwords.fr, remove_punct=TRUE, remove_numbers = TRUE,
+tolower = TRUE, verbose = TRUE)
+dist<-textstat_simil(matrice, margin="documents", method="cosine")
+dist
+matrice
+unCorpus <- corpus(c(geuContent, methotrexateContent,
+psoriasisContent))
+length(methotrexateContent)
+getConcatenation = function(term){
+df <- search_medicament(endpoint, term)
+df <- unique(df)
+concatenation <- paste(df$contentPost,collapse="\n")
+#matrice <- quanteda::dfm(concatenation, remove = stopwords.fr, remove_punct=TRUE, remove_numbers = TRUE,
+#             tolower = TRUE, verbose = TRUE)
+return(concatenation)
+}
+geuContent <-getConcatenation("geu")
+methotrexateContent <- getConcatenation("methotrexate")
+psoriasisContent <- getConcatenation("psoriaris")
+length(geuContent)
+unCorpus <- corpus(c(geuContent, methotrexateContent,
+psoriasisContent))
+matrice <- quanteda::dfm(unCorpus,
+remove = stopwords.fr, remove_punct=TRUE, remove_numbers = TRUE,
+tolower = TRUE, verbose = TRUE)
+dist<-textstat_simil(matrice, margin="documents", method="cosine")
+dist
+as.data.frame(as.matrix(dist))
+colnames(df)
+contreIndication = function(medicament, maladie){
+dfMedicament <- search_medicament(endpoint, medicament)
+dfMedicamentId <- unique(dfMedicament$postURL)
+dfMaladie <- search_medicament(endpoint, maladie)
+dfMaladie <- unique(dfMaladie$postURL)
+communsId <- intersect(dfMedicament, dfMedicamentId)
+if (length(communsId) == 0){
+cat("aucun post en commun !")
+return(NULL)
+}
+postsCommuns <- subset (dfMedicament, postURL %in% communsId)
+return(postsCommuns)
+}
+voir <- contreIndication("depakine","grossesse")
+contreIndication = function(medicament, maladie){
+dfMedicament <- search_medicament(endpoint, medicament)
+dfMedicamentId <- unique(dfMedicament$postURL)
+bool <- grepl(maladie, dfMedicament$contentPost)
+if (!any(bool)){
+cat("aucun post en commun !")
+return(NULL)
+}
+dfMaladie <- subset (dfMedicament, bool)
+return(dfMaladie)
+# dfMaladie <- search_medicament(endpoint, maladie)
+# dfMaladieId <- unique(dfMaladie$postURL)
+#
+# communsId <- intersect(dfMaladieId, dfMedicamentId)
+# if (length(communsId) == 0){
+#   cat("aucun post en commun !")
+#   return(NULL)
+# }
+# postsCommuns <- subset (dfMedicament, postURL %in% communsId)
+# return(postsCommuns)
+}
+voir <- contreIndication("depakine","grossesse")
+View(voir)

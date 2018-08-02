@@ -1,0 +1,71 @@
+0.9.8-1 (23.05.2018)
+===============
+* Fix 'xl.read.file' - it reads hidden sheets incorrectly. Thanks for reporting to Katie McCarron.
+* Add functions 'xl.sheet.show'/'xl.sheet.hide'/'xl.sheet.visible' to manage sheets visibility (very hidden sheet is not supported)
+* Add argument 'write.res.password' for xl.workbook.open/xl.workbook.save/xl.read.file/xl.save.file for reading/writing Excel files with second password (issue #11)
+* Add new function: xl.sheet.name - for getting/setting active sheet name 
+* Add new function: xl.sheet.duplicate (issue #14)
+* Now in R_Connection_Examples.xlsm we use default version of R, not 32-bit version (issue #13)
+
+0.9.7 (30.04.2017)
+===============
+* Add option to get full path to workbooks (https://github.com/gdemin/excel.link/issues/7)
+* Now xl.workbook.open doesn't try to open already open workbook (https://github.com/gdemin/excel.link/issues/6)
+* Add xl(*)n family of functions. They create new sheet before output.
+* Add very basic formatting support via xl.property
+* Add xl.write method for 'etable' class from 'expss' package - https://gdemin.github.io/expss/
+
+0.9.5 (24.09.2016)
+===============
+* Fixes an issue with multibyte character encoding (fix from soeque1 https://github.com/soeque1)
+* Fixes an issue with two workbooks after xl.workbooks.add/xl.workbooks.open
+
+
+0.9.4 (12.04.2016)
+===============
+* Fixes a GCC warning and linking error from gcc v4.9.3 (fix by Jim Hester)
+
+0.9.3 (06.12.2015)
+===============
+* Make Excel examples compatible with 64-bit Excel version.
+* Remove 'emf' format from current.graphics
+
+0.9.1 (14.07.2015)
+===============
+* Fix converstion of #NUM! and other Excel errors. Now they are converted to NaN.
+* Add basic datetime supports
+* Add abitility to name pictures in Excel - so it can be updated from R
+* xl.workbook.open/xl.read.file now can read files from URL
+* Add active bindings to Excel ranges
+
+0.8.1 (06.05.2015)
+===============
+* RDCOMClient integration
+* options(excel_hwnd) to get specific Excel instance
+
+0.7.5 (25.04.2015)
+===============
+* RStudio compatibility fix
+* Switch to RDoxygen for documentation
+* Release on Github
+* Excel examples
+* Reading/writing password-protected files 
+	
+0.6 (04.09.2013)
+================
+* Added functions xl.read.file, xl.save.file
+* Added filename argument in current.graphics
+
+0.5.5 (12.04.2013)
+=================
+* Compatibilty fix for R3.0 release 
+
+0.5.4 (13.08.2012)
+================== 
+* current.graphics now insert picture instead of link to the file
+* aaa[condition,new.var] = data   now works properly
+
+0.5 (19.11.2011)
+================
+* initial release 
+

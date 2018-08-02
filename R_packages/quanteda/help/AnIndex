@@ -20,6 +20,8 @@ as.dictionary	as.dictionary
 as.dist.dist	as.dist.dist
 as.DocumentTermMatrix	convert-wrappers
 as.fcm	as.fcm
+as.igraph	as.igraph
+as.igraph.fcm	textplot_network
 as.list,dictionary2-method	dictionary-class
 as.list.dist	as.list.dist
 as.list.dist_selection	as.list.dist_selection

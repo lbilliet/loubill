@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Easy histogram plot with R package ggplot2</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for ggplot2.histogram {easyGgplot2}"><tr><td>ggplot2.histogram {easyGgplot2}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Easy histogram plot with R package ggplot2</h2>
+
+<h3>Description</h3>
+
+<p>Easy histogram plot with R package ggplot2
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+ggplot2.histogram(data, xName = NULL, groupName = NULL,
+  position = c("identity", "stack", "dodge"), addMeanLine = FALSE,
+  meanLineColor = NULL, meanLineType = "dashed", meanLineSize = 1,
+  addDensityCurve = FALSE, densityFill = "#FF6666", densityAlpha = 0.2,
+  densityLineType = "solid", densityLineColor = "#2F2F2F",
+  scale = c("frequency", "density"), groupColors = NULL,
+  brewerPalette = NULL, fill = "black", color = "black",
+  linetype = "solid", ...)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>data</code></td>
+<td>
+<p>data.frame or a numeric vector. Columns are variables and rows
+are observations.</p>
+</td></tr>
+<tr valign="top"><td><code>xName</code></td>
+<td>
+<p>The name of column containing x variable (i.e groups). Default
+value is NULL.</p>
+</td></tr>
+<tr valign="top"><td><code>groupName</code></td>
+<td>
+<p>The name of column containing group variable. This variable
+is used to color plot according to the group.</p>
+</td></tr>
+<tr valign="top"><td><code>position</code></td>
+<td>
+<p>Change the position adjustment to use for overlapping points
+on the layer. Possible values for the argument position is &quot;identity&quot;,
+&quot;stack&quot;, &quot;dodge&quot;. Default value is identity.</p>
+</td></tr>
+<tr valign="top"><td><code>addMeanLine</code></td>
+<td>
+<p>if TRUE, the mean line is added on the plot for each
+group. Default value is FALSE.</p>
+</td></tr>
+<tr valign="top"><td><code>meanLineColor, meanLineType, meanLineSize</code></td>
+<td>
+<p>mean line color, type and
+size.</p>
+</td></tr>
+<tr valign="top"><td><code>addDensityCurve</code></td>
+<td>
+<p>If true, add density curve. Default value is FALSE.</p>
+</td></tr>
+<tr valign="top"><td><code>densityFill</code></td>
+<td>
+<p>The fill color of density plot. The value is considered
+only when groupName=NULL. If groupName is specified, density curves are
+colored according groupColors pr brewerPalette.</p>
+</td></tr>
+<tr valign="top"><td><code>densityAlpha</code></td>
+<td>
+<p>Degre of transparency of overlaid colors for density
+curves. Default is 0.2 (20%).</p>
+</td></tr>
+<tr valign="top"><td><code>densityLineType, densityLineColor</code></td>
+<td>
+<p>Line type and color for density
+curve.</p>
+</td></tr>
+<tr valign="top"><td><code>scale</code></td>
+<td>
+<p>Indicate whether y axis values are density or frequency.
+Default value is frequency.</p>
+</td></tr>
+<tr valign="top"><td><code>groupColors</code></td>
+<td>
+<p>Color of groups. groupColors should have the same length
+as groups.</p>
+</td></tr>
+<tr valign="top"><td><code>brewerPalette</code></td>
+<td>
+<p>This can be also used to indicate group colors. In this
+case the parameter groupColors should be NULL. e.g: brewerPalette=&quot;Paired&quot;.</p>
+</td></tr>
+<tr valign="top"><td><code>linetype, fill, color</code></td>
+<td>
+<p>linetype, outline and fill colors</p>
+</td></tr>
+<tr valign="top"><td><code>...</code></td>
+<td>
+<p>Other arguments passed on to ggplot2.customize custom function
+or to geom_histogram and geom_density functions from ggplot2 package.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>a ggplot
+</p>
+
+
+<h3>Author(s)</h3>
+
+<p>Alboukadel Kassambara &lt;alboukadel.kassambara@gmail.com&gt;
+</p>
+
+
+<h3>References</h3>
+
+<p>http://www.sthda.com
+</p>
+
+
+<h3>See Also</h3>
+
+<p><code><a href="ggplot2.dotplot.html">ggplot2.dotplot</a>, <a href="ggplot2.violinplot.html">ggplot2.violinplot</a>,
+<a href="ggplot2.stripchart.html">ggplot2.stripchart</a>, <a href="ggplot2.boxplot.html">ggplot2.boxplot</a>, <a href="ggplot2.density.html">ggplot2.density</a></code>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+
+#data
+set.seed(1234)
+df &lt;- data.frame(grp = factor( rep(c("A","B"), each=200) ), 
+                   var = c(rnorm(200),rnorm(200, mean=.8)))
+#plot
+plot&lt;-ggplot2.histogram(data=df, xName='var',groupName='grp', groupColors=c('#999999','#E69F00'))
+plot&lt;-ggplot2.customize(plot, mainTitle="Plot of variable histogram \nper group",
+                        xtitle="Variable", ytitle="Histogram")
+print(plot)
+
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>easyGgplot2</em> version 1.0.0.9000 <a href="00Index.html">Index</a>]</div>
+</body></html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Perform and customize easily a plot with ggplot2</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for easyGgplot2-package {easyGgplot2}"><tr><td>easyGgplot2-package {easyGgplot2}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Perform and customize easily a plot with ggplot2</h2>
+
+<h3>Description</h3>
+
+<p>An easy-to-use way to make plot with R package ggplot2</p>
+
+
+<h3>Details</h3>
+
+
+<table summary="Rd table">
+<tr>
+ <td style="text-align: left;">
+Package: </td><td style="text-align: left;"> easyGgplot2</td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+Type: </td><td style="text-align: left;"> Package</td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+Version: </td><td style="text-align: left;"> 1.0</td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+Date: </td><td style="text-align: left;"> 2014-08-31</td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+License: </td><td style="text-align: left;"> GPL-2</td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+</td>
+</tr>
+
+</table>
+
+
+
+<h3>Author(s)</h3>
+
+<p>Alboukadel Kassambara &lt;alboukadel.kassambara@gmail.com&gt;
+</p>
+<p>Maintainer: Alboukadel Kassambara &lt;alboukadel.kassambara@gmail.com&gt;
+</p>
+
+
+<h3>References</h3>
+
+<p>http://www.sthda.com
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+#Boxplot
+ggplot2.boxplot(data=ToothGrowth, xName='dose',yName='len',
+                mainTitle="Plot of length according\n to the dose",
+                xtitle="Dose (mg)", ytitle="Length")
+
+#Dotplot
+ggplot2.dotplot(data=ToothGrowth, xName='dose',yName='len',
+                mainTitle="Plot of length according\n to the dose",
+                xtitle="Dose (mg)", ytitle="Length")
+
+#Scatterplot
+ggplot2.scatterplot(data=mtcars, xName='wt',yName='mpg', size=3,
+                mainTitle="Plot of miles per gallon \n according to the weight",
+                xtitle="Weight (lb/1000)", ytitle="Miles/(US) gallon")
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>easyGgplot2</em> version 1.0.0.9000 <a href="00Index.html">Index</a>]</div>
+</body></html>
