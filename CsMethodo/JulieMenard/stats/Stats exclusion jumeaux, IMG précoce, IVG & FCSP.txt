@@ -1,0 +1,8 @@
+"     ID" "    poids" "    terme" " nouveau_ne" "nombre_de_fœtus"
+"" "Length:22         " "Min.   :37.00  " "Min.   :24.57  " "Length:22         " "Min.   :1  "
+"" "Class :character  " "1st Qu.:57.00  " "1st Qu.:34.00  " "Class :character  " "1st Qu.:1  "
+"" "Mode  :character  " "Median :64.00  " "Median :36.71  " "Mode  :character  " "Median :1  "
+"" NA "Mean   :67.31  " "Mean   :35.22  " NA "Mean   :1  "
+"" NA "3rd Qu.:80.00  " "3rd Qu.:38.03  " NA "3rd Qu.:1  "
+"" NA "Max.   :95.50  " "Max.   :39.28  " NA "Max.   :1  "
+"" NA "NA's   :1  " NA NA NA
