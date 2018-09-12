@@ -1,0 +1,32 @@
+﻿ Nom_de_la_mere  Date_de_naissance Arrivee_en_France      PÈRE    
+ Min.   : 1.00   Min.   :1974      Min.   :2008      Min.   :0.0  
+ 1st Qu.:11.25   1st Qu.:1982      1st Qu.:2012      1st Qu.:2.0  
+ Median :25.00   Median :1985      Median :2014      Median :2.0  
+ Mean   :25.31   Mean   :1986      Mean   :2013      Mean   :1.6  
+ 3rd Qu.:38.75   3rd Qu.:1990      3rd Qu.:2015      3rd Qu.:2.0  
+ Max.   :52.00   Max.   :1995      Max.   :2016      Max.   :2.0  
+                 NA's   :13        NA's   :35        NA's   :151  
+   Quel_type   Gestes_techniques_specialises    Age_reel     
+ Min.   :0     Min.   :0.000                 Min.   :  19.0  
+ 1st Qu.:0     1st Qu.:1.000                 1st Qu.:  26.0  
+ Median :0     Median :2.000                 Median :  39.0  
+ Mean   :0     Mean   :1.441                 Mean   : 590.1  
+ 3rd Qu.:0     3rd Qu.:2.000                 3rd Qu.:1423.0  
+ Max.   :0     Max.   :2.000                 Max.   :1423.0  
+ NA's   :162   NA's   :132                   NA's   :67      
+ Age_corrige_en_mois Age_de_la_1ere_vaccination      ASQ     
+ Min.   :19.00       Min.   :2                  Min.   :0    
+ 1st Qu.:20.75       1st Qu.:2                  1st Qu.:0    
+ Median :26.50       Median :2                  Median :0    
+ Mean   :26.86       Mean   :2                  Mean   :0    
+ 3rd Qu.:27.00       3rd Qu.:2                  3rd Qu.:0    
+ Max.   :38.00       Max.   :2                  Max.   :0    
+ NA's   :152         NA's   :152                NA's   :163  
+     ASQ__1     Bilinguisme 
+ Min.   :0     Min.   :1    
+ 1st Qu.:0     1st Qu.:1    
+ Median :0     Median :1    
+ Mean   :0     Mean   :1    
+ 3rd Qu.:0     3rd Qu.:1    
+ Max.   :0     Max.   :1    
+ NA's   :163   NA's   :160

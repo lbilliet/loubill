@@ -1,0 +1,11 @@
+setwd("C:/Users/billiel/Desktop/Cs methodo")
+DT<-read.csv(file = "IgG_VEMSPct.csv",header = TRUE, sep = ";")
+attach(DT)
+modellin<-lm(DT$X.VEMS~DT$IgG)
+modellin
+plot(X.VEMS~IgG, xlim=c(0,25), ylim=c(0,2))
+abline(modellin)
+summary(modellin)
+summary(X.VEMS)
+Summary(IgG)
+summary(DT)

@@ -1,0 +1,18 @@
+﻿Déviation standard
+               Nom_de_la_mere             Date_de_naissance             Arrivee_en_France 
+                   15.3586834                     5.0950714                     1.8577732 
+                         PÈRE                     Quel_type Gestes_techniques_specialises 
+                    0.8280787                     0.0000000                     0.7045814 
+                     Age_reel           Age_corrige_en_mois    Age_de_la_1ere_vaccination 
+                  683.4722127                     6.9155026                     0.0000000 
+                          ASQ                        ASQ__1                   Bilinguisme 
+                    0.0000000                     0.0000000                     0.0000000 
+Variance
+               Nom_de_la_mere             Date_de_naissance             Arrivee_en_France 
+                 2.358892e+02                  2.595975e+01                  3.451321e+00 
+                         PÈRE                     Quel_type Gestes_techniques_specialises 
+                 6.857143e-01                  0.000000e+00                  4.964349e-01 
+                     Age_reel           Age_corrige_en_mois    Age_de_la_1ere_vaccination 
+                 4.671343e+05                  4.782418e+01                  0.000000e+00 
+                          ASQ                        ASQ__1                   Bilinguisme 
+                 0.000000e+00                  0.000000e+00                  0.000000e+00

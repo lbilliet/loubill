@@ -1,0 +1,47 @@
+Search                  Full text search of Elasticsearch
+Search_template         Search or validate templates
+Search_uri              Full text search of Elasticsearch with URI
+                        search
+alias                   Elasticsearch alias APIs
+cat                     Use the cat Elasticsearch api.
+cluster                 Elasticsearch cluster endpoints
+connect                 Set connection details to an Elasticsearch
+                        engine.
+count                   Get counts of the number of records per index.
+docs_bulk               Use the bulk API to create, index, update, or
+                        delete documents.
+docs_bulk_prep          Use the bulk API to prepare bulk format data
+docs_bulk_update        Use the bulk API to update documents
+docs_create             Create a document
+docs_delete             Delete a document
+docs_get                Get documents
+docs_mget               Get multiple documents via the multiple get
+                        API.
+docs_update             Update a document
+documents               Elasticsearch documents functions.
+elastic                 elastic: An Elasticsearch R client.
+elastic-defunct         Defunct functions in elastic
+explain                 Explain a search query.
+field_caps              Field capabilities
+field_stats             Search field statistics
+fielddata               fielddata
+index                   Index API operations
+index_template          Index templates
+info                    Get the basic info from the current cluster
+mapping                 Mapping management
+msearch                 Multi-search
+mtermvectors            Multi Termvectors
+nodes                   Elasticsearch nodes endpoints.
+percolate               Percolater
+ping                    Ping an Elasticsearch server.
+preference              Preferences.
+reindex                 Reindex
+scroll                  Scroll search function
+search_shards           Search shards.
+searchapis              Search functions.
+tasks                   Elasticsearch tasks endpoints
+termvectors             Termvectors
+tokenizer_set           Tokenizer operations
+units-distance          Distance units
+units-time              Time units
+validate                Validate a search
