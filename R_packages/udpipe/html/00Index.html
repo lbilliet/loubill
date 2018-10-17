@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><title>R: Tokenization, Parts of Speech Tagging, Lemmatization and
+Dependency Parsing with the 'UDPipe' 'NLP' Toolkit</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+<h1> Tokenization, Parts of Speech Tagging, Lemmatization and
+Dependency Parsing with the 'UDPipe' 'NLP' Toolkit
+<img class="toplogo" src="../../../doc/html/Rlogo.svg" alt="[R logo]" />
+</h1>
+<hr/>
+<div style="text-align: center;">
+<a href="../../../doc/html/packages.html"><img class="arrow" src="../../../doc/html/left.jpg" alt="[Up]" /></a>
+<a href="../../../doc/html/index.html"><img class="arrow" src="../../../doc/html/up.jpg" alt="[Top]" /></a>
+</div><h2>Documentation for package &lsquo;udpipe&rsquo; version 0.7</h2>
+
+<ul><li><a href="../DESCRIPTION">DESCRIPTION file</a>.</li>
+<li><a href="../doc/index.html">User guides, package vignettes and other documentation.</a></li>
+</ul>
+
+<h2>Help Pages</h2>
+
+
+<table width="100%">
+<tr><td style="width: 25%;"><a href="as.data.frame.udpipe_connlu.html">as.data.frame.udpipe_connlu</a></td>
+<td>Convert the result of udpipe_annotate to a tidy data frame</td></tr>
+<tr><td style="width: 25%;"><a href="as.matrix.cooccurrence.html">as.matrix.cooccurrence</a></td>
+<td>Convert the result of cooccurrence to a sparse matrix</td></tr>
+<tr><td style="width: 25%;"><a href="as_conllu.html">as_conllu</a></td>
+<td>Convert a data.frame to CONLL-U format</td></tr>
+<tr><td style="width: 25%;"><a href="as_cooccurrence.html">as_cooccurrence</a></td>
+<td>Convert a matrix to a co-occurrence data.frame</td></tr>
+<tr><td style="width: 25%;"><a href="as_phrasemachine.html">as_phrasemachine</a></td>
+<td>Convert Parts of Speech tags to one-letter tags which can be used to identify phrases based on regular expressions</td></tr>
+<tr><td style="width: 25%;"><a href="as_word2vec.html">as_word2vec</a></td>
+<td>Convert a matrix of word vectors to word2vec format</td></tr>
+<tr><td style="width: 25%;"><a href="brussels_listings.html">brussels_listings</a></td>
+<td>Brussels AirBnB address locations available at www.insideairbnb.com</td></tr>
+<tr><td style="width: 25%;"><a href="brussels_reviews.html">brussels_reviews</a></td>
+<td>Reviews of AirBnB customers on Brussels address locations available at www.insideairbnb.com</td></tr>
+<tr><td style="width: 25%;"><a href="brussels_reviews_anno.html">brussels_reviews_anno</a></td>
+<td>Reviews of the AirBnB customers which are tokenised, POS tagged and lemmatised</td></tr>
+<tr><td style="width: 25%;"><a href="cbind_dependencies.html">cbind_dependencies</a></td>
+<td>Add the dependency parsing information to an annotated dataset</td></tr>
+<tr><td style="width: 25%;"><a href="cbind_morphological.html">cbind_morphological</a></td>
+<td>Add morphological features to an annotated dataset</td></tr>
+<tr><td style="width: 25%;"><a href="keywords_collocation.html">collocation</a></td>
+<td>Extract collocations - a sequence of terms which follow each other</td></tr>
+<tr><td style="width: 25%;"><a href="cooccurrence.html">cooccurrence</a></td>
+<td>Create a cooccurence data.frame</td></tr>
+<tr><td style="width: 25%;"><a href="cooccurrence.html">cooccurrence.character</a></td>
+<td>Create a cooccurence data.frame</td></tr>
+<tr><td style="width: 25%;"><a href="cooccurrence.html">cooccurrence.cooccurrence</a></td>
+<td>Create a cooccurence data.frame</td></tr>
+<tr><td style="width: 25%;"><a href="cooccurrence.html">cooccurrence.data.frame</a></td>
+<td>Create a cooccurence data.frame</td></tr>
+<tr><td style="width: 25%;"><a href="document_term_frequencies.html">document_term_frequencies</a></td>
+<td>Aggregate a data.frame to the document/term level by calculating how many times a term occurs per document</td></tr>
+<tr><td style="width: 25%;"><a href="document_term_frequencies.html">document_term_frequencies.character</a></td>
+<td>Aggregate a data.frame to the document/term level by calculating how many times a term occurs per document</td></tr>
+<tr><td style="width: 25%;"><a href="document_term_frequencies.html">document_term_frequencies.data.frame</a></td>
+<td>Aggregate a data.frame to the document/term level by calculating how many times a term occurs per document</td></tr>
+<tr><td style="width: 25%;"><a href="document_term_frequencies_statistics.html">document_term_frequencies_statistics</a></td>
+<td>Add Term Frequency, Inverse Document Frequency and Okapi BM25 statistics to the output of document_term_frequencies</td></tr>
+<tr><td style="width: 25%;"><a href="document_term_matrix.html">document_term_matrix</a></td>
+<td>Create a document/term matrix from a data.frame with 1 row per document/term</td></tr>
+<tr><td style="width: 25%;"><a href="document_term_matrix.html">document_term_matrix.data.frame</a></td>
+<td>Create a document/term matrix from a data.frame with 1 row per document/term</td></tr>
+<tr><td style="width: 25%;"><a href="document_term_matrix.html">document_term_matrix.DocumentTermMatrix</a></td>
+<td>Create a document/term matrix from a data.frame with 1 row per document/term</td></tr>
+<tr><td style="width: 25%;"><a href="document_term_matrix.html">document_term_matrix.simple_triplet_matrix</a></td>
+<td>Create a document/term matrix from a data.frame with 1 row per document/term</td></tr>
+<tr><td style="width: 25%;"><a href="document_term_matrix.html">document_term_matrix.TermDocumentMatrix</a></td>
+<td>Create a document/term matrix from a data.frame with 1 row per document/term</td></tr>
+<tr><td style="width: 25%;"><a href="dtm_bind.html">dtm_bind</a></td>
+<td>Combine 2 document term matrices either by rows or by columns</td></tr>
+<tr><td style="width: 25%;"><a href="dtm_bind.html">dtm_cbind</a></td>
+<td>Combine 2 document term matrices either by rows or by columns</td></tr>
+<tr><td style="width: 25%;"><a href="dtm_colsums.html">dtm_colsums</a></td>
+<td>Column sums and Row sums for document term matrices</td></tr>
+<tr><td style="width: 25%;"><a href="dtm_cor.html">dtm_cor</a></td>
+<td>Pearson Correlation for Sparse Matrices</td></tr>
+<tr><td style="width: 25%;"><a href="dtm_bind.html">dtm_rbind</a></td>
+<td>Combine 2 document term matrices either by rows or by columns</td></tr>
+<tr><td style="width: 25%;"><a href="dtm_remove_lowfreq.html">dtm_remove_lowfreq</a></td>
+<td>Remove terms occurring with low frequency from a Document-Term-Matrix and documents with no terms</td></tr>
+<tr><td style="width: 25%;"><a href="dtm_remove_terms.html">dtm_remove_terms</a></td>
+<td>Remove terms from a Document-Term-Matrix and keep only documents which have a least some terms</td></tr>
+<tr><td style="width: 25%;"><a href="dtm_remove_tfidf.html">dtm_remove_tfidf</a></td>
+<td>Remove terms from a Document-Term-Matrix and documents with no terms based on the term frequency inverse document frequency</td></tr>
+<tr><td style="width: 25%;"><a href="dtm_reverse.html">dtm_reverse</a></td>
+<td>Inverse operation of the document_term_matrix function</td></tr>
+<tr><td style="width: 25%;"><a href="dtm_colsums.html">dtm_rowsums</a></td>
+<td>Column sums and Row sums for document term matrices</td></tr>
+<tr><td style="width: 25%;"><a href="dtm_tfidf.html">dtm_tfidf</a></td>
+<td>Term Frequency - Inverse Document Frequency calculation</td></tr>
+<tr><td style="width: 25%;"><a href="keywords_collocation.html">keywords_collocation</a></td>
+<td>Extract collocations - a sequence of terms which follow each other</td></tr>
+<tr><td style="width: 25%;"><a href="keywords_phrases.html">keywords_phrases</a></td>
+<td>Extract phrases - a sequence of terms which follow each other based on a sequence of Parts of Speech tags</td></tr>
+<tr><td style="width: 25%;"><a href="keywords_rake.html">keywords_rake</a></td>
+<td>Keyword identification using Rapid Automatic Keyword Extraction (RAKE)</td></tr>
+<tr><td style="width: 25%;"><a href="keywords_phrases.html">phrases</a></td>
+<td>Extract phrases - a sequence of terms which follow each other based on a sequence of Parts of Speech tags</td></tr>
+<tr><td style="width: 25%;"><a href="predict.LDA.html">predict.LDA</a></td>
+<td>Predict method for an object of class LDA_VEM or class LDA_Gibbs</td></tr>
+<tr><td style="width: 25%;"><a href="predict.LDA.html">predict.LDA_Gibbs</a></td>
+<td>Predict method for an object of class LDA_VEM or class LDA_Gibbs</td></tr>
+<tr><td style="width: 25%;"><a href="predict.LDA.html">predict.LDA_VEM</a></td>
+<td>Predict method for an object of class LDA_VEM or class LDA_Gibbs</td></tr>
+<tr><td style="width: 25%;"><a href="txt_collapse.html">txt_collapse</a></td>
+<td>Collapse a character vector while removing missing data.</td></tr>
+<tr><td style="width: 25%;"><a href="txt_freq.html">txt_freq</a></td>
+<td>Frequency statistics of elements in a vector</td></tr>
+<tr><td style="width: 25%;"><a href="txt_highlight.html">txt_highlight</a></td>
+<td>Highlight words in a character vector</td></tr>
+<tr><td style="width: 25%;"><a href="txt_next.html">txt_next</a></td>
+<td>Get the n-th next element of a vector</td></tr>
+<tr><td style="width: 25%;"><a href="txt_nextgram.html">txt_nextgram</a></td>
+<td>Based on a vector with a word sequence, get n-grams</td></tr>
+<tr><td style="width: 25%;"><a href="txt_previous.html">txt_previous</a></td>
+<td>Get the n-th previous element of a vector</td></tr>
+<tr><td style="width: 25%;"><a href="txt_recode.html">txt_recode</a></td>
+<td>Recode text to other categories</td></tr>
+<tr><td style="width: 25%;"><a href="txt_recode_ngram.html">txt_recode_ngram</a></td>
+<td>Recode words with compound multi-word expressions</td></tr>
+<tr><td style="width: 25%;"><a href="txt_sample.html">txt_sample</a></td>
+<td>Boilerplate function to sample one element from a vector.</td></tr>
+<tr><td style="width: 25%;"><a href="txt_show.html">txt_show</a></td>
+<td>Boilerplate function to cat only 1 element of a character vector.</td></tr>
+<tr><td style="width: 25%;"><a href="txt_tagsequence.html">txt_tagsequence</a></td>
+<td>Identify a contiguous sequence of tags as 1 being entity</td></tr>
+<tr><td style="width: 25%;"><a href="udpipe.html">udpipe</a></td>
+<td>Tokenising, Lemmatising, Tagging and Dependency Parsing of raw text in TIF format</td></tr>
+<tr><td style="width: 25%;"><a href="udpipe_accuracy.html">udpipe_accuracy</a></td>
+<td>Evaluate the accuracy of your UDPipe model on holdout data</td></tr>
+<tr><td style="width: 25%;"><a href="udpipe_annotate.html">udpipe_annotate</a></td>
+<td>Tokenising, Lemmatising, Tagging and Dependency Parsing Annotation of raw text</td></tr>
+<tr><td style="width: 25%;"><a href="udpipe_annotation_params.html">udpipe_annotation_params</a></td>
+<td>List with training options set by the UDPipe community when building models based on the Universal Dependencies data</td></tr>
+<tr><td style="width: 25%;"><a href="udpipe_download_model.html">udpipe_download_model</a></td>
+<td>Download an UDPipe model provided by the UDPipe community for a specific language of choice</td></tr>
+<tr><td style="width: 25%;"><a href="udpipe_load_model.html">udpipe_load_model</a></td>
+<td>Load an UDPipe model</td></tr>
+<tr><td style="width: 25%;"><a href="udpipe_read_conllu.html">udpipe_read_conllu</a></td>
+<td>Read in a CONLL-U file as a data.frame</td></tr>
+<tr><td style="width: 25%;"><a href="udpipe_train.html">udpipe_train</a></td>
+<td>Train a UDPipe model</td></tr>
+<tr><td style="width: 25%;"><a href="unique_identifier.html">unique_identifier</a></td>
+<td>Create a unique identifier for each combination of fields in a data frame</td></tr>
+</table>
+</body></html>
